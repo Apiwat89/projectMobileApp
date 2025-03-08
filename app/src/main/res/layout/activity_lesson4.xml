@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,4 +7,266 @@
     android:layout_height="match_parent"
     tools:context=".Lesson4">
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnQuiz4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="60sp"
+                android:layout_height="60sp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@android:drawable/ic_menu_revert"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="บทที่ 4\nคำสั่งควบคุม"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#283593"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="คำสั่งควบคุมในภาษา Java"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="คำสั่งควบคุมในภาษา Java เป็นเครื่องมือที่ใช้ในการตัดสินใจและทำงานในลูปหรือวนซ้ำ เช่น การตรวจสอบเงื่อนไข หรือการวนลูปทำงานซ้ำไปเรื่อยๆ โดยแบ่งออกเป็น 3 ประเภทหลัก ได้แก่\n"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. คำสั่งเงื่อนไข (Conditional Statements)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เช่น `if`, `if-else`, `switch` ใช้ในการตัดสินใจตามเงื่อนไขที่กำหนด"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="ตัวอย่างการใช้ if-else :"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:text="int age = 18;\nif (age &gt;= 18) {\n    System.out.println('คุณเป็นผู้ใหญ่');\n} else {\n    System.out.println('คุณยังเป็นเยาวชน');\n}"
+                android:textSize="16sp"
+                android:typeface="monospace"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="ตัวอย่างการใช้ switch :"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:text="int day = 3;\nString result;\nswitch (day) {\n    case 1:\n        result = 'วันจันทร์';\n        break;\n    case 2:\n        result = 'วันอังคาร';\n        break;\n    case 3:\n        result = 'วันพุธ';\n        break;\n    default:\n        result = 'วันอื่น';\n}\nSystem.out.println(result);"
+                android:textSize="16sp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n2. คำสั่งวนลูป (Loop Statements)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เช่น `for`, `while`, `do-while` ใช้ในการทำงานซ้ำๆ จนกว่าจะเป็นไปตามเงื่อนไขที่กำหนด"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="ตัวอย่างการใช้ for loop :"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:text="for (int i = 1; i &lt;= 5; i++) {\n    System.out.println('รอบที่: ' + i);\n}"
+                android:textSize="16sp"
+                android:typeface="monospace"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="ตัวอย่างการใช้ while loop :"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:text="int i = 1;\nwhile (i &lt;= 5) {\n    System.out.println('รอบที่: ' + i);\n    i++;\n}"
+                android:textSize="16sp"
+                android:typeface="monospace"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="ตัวอย่างการใช้ do-while loop:"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:text="int i = 1;\ndo {\n    System.out.println('รอบที่: ' + i);\n    i++;\n} while (i &lt;= 5);"
+                android:textSize="16sp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n3. คำสั่งควบคุมการไหล (Control Flow Statements)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เช่น `break`, `continue` ใช้ในการเปลี่ยนลำดับการทำงานของโปรแกรม"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="ตัวอย่าง break :"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:text="for (int i = 0; i &lt; 10; i++) {\n    if (i == 5) {\n        break;\n    }\n    System.out.println(i);\n}"
+                android:textSize="16sp"
+                android:typeface="monospace"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="ตัวอย่าง continue :"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:text="for (int i = 0; i &lt; 10; i++) {\n    if (i == 5) {\n        continue;\n    }\n    System.out.println(i);\n}"
+                android:textSize="16sp"
+                android:typeface="monospace"/>
+
+            <Button
+                android:id="@+id/btnQuiz4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#464646"
+                android:text="ทำแบบทดสอบ"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnBackLesson"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#7A1FA1"
+                    android:text="บทก่อนหน้า"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnNextLesson"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#7A1FA1"
+                    android:text="บทถัดไป"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

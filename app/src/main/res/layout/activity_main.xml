@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#B39DDB"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="16dp"
-            android:text="บทเรียน"
+            android:text="JAVA"
             android:textColor="#6A0199"
             android:textSize="38sp"
             android:textStyle="bold" />
@@ -80,23 +80,26 @@
         </LinearLayout>
 
         <!-- ปุ่มบทเรียน -->
+
         <Button
             android:id="@+id/btnLesson1"
             android:layout_width="match_parent"
             android:layout_height="60sp"
+            android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="#474747"
             android:gravity="center|fill_vertical"
             android:text="บทที่ 1 ชนิดข้อมูล"
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btnLesson2"
+            android:id="@+id/btnNextLesson"
             android:layout_width="match_parent"
             android:layout_height="60sp"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="#474747"
             android:text="บทที่ 2 ตัวแปร"
             android:textColor="#FFFFFF" />
 
@@ -104,8 +107,9 @@
             android:id="@+id/btnLesson3"
             android:layout_width="match_parent"
             android:layout_height="60sp"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="#474747"
             android:text="บทที่ 3 ชนิดข้อมูล"
             android:textColor="#FFFFFF" />
 
@@ -113,8 +117,9 @@
             android:id="@+id/btnLesson4"
             android:layout_width="match_parent"
             android:layout_height="60sp"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="#474747"
             android:text="บทที่ 4 คำสั่งควบคุม"
             android:textColor="#FFFFFF" />
 
@@ -122,8 +127,9 @@
             android:id="@+id/btnLesson5"
             android:layout_width="match_parent"
             android:layout_height="60sp"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="#474747"
             android:text="บทที่ 5 ฟังก์ชัน"
             android:textColor="#FFFFFF" />
     </LinearLayout>
