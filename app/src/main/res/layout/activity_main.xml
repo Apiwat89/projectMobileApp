@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- หัวข้อ -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"
+            android:text="บทเรียน"
+            android:textColor="#6A0199"
+            android:textSize="38sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/rounded_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- หัวข้อ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ความคืบหน้าในการเรียน"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- แสดง Progress เป็นตัวเลข -->
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="2/5 บท"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Progress Bar Container (พื้นหลังสีขาว) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/progressContainer"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/progress_background"
+                android:padding="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProgress">
+
+                <!-- แท่ง Progress (สีม่วง) -->
+                <View
+                    android:id="@+id/progressView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/progress_foreground"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <!-- ปุ่มบทเรียน -->
+        <Button
+            android:id="@+id/btnLesson1"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#000000"
+            android:gravity="center|fill_vertical"
+            android:text="บทที่ 1 ชนิดข้อมูล"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnLesson2"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#000000"
+            android:text="บทที่ 2 ตัวแปร"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnLesson3"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#000000"
+            android:text="บทที่ 3 ชนิดข้อมูล"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnLesson4"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#000000"
+            android:text="บทที่ 4 คำสั่งควบคุม"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnLesson5"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#000000"
+            android:text="บทที่ 5 ฟังก์ชัน"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
