@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
-        <item>@font/aladin</item>
-        <item>@font/tai_heritage_pro</item>
     </array>
 </resources>

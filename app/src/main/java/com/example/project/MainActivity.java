@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         updateProgress(progressValue);
 
         btnLesson1 = findViewById(R.id.btnLesson1);
-        btnLesson2 = findViewById(R.id.btnNextLesson);
+        btnLesson2 = findViewById(R.id.btnLesson2);
         btnLesson3 = findViewById(R.id.btnLesson3);
         btnLesson4 = findViewById(R.id.btnLesson4);
         btnLesson5 = findViewById(R.id.btnLesson5);
@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         if (id == R.id.btnLesson1) {
             startActivity(new Intent(this, Lesson1.class));
             finishAffinity();
-        } else if (id == R.id.btnNextLesson) {
+        } else if (id == R.id.btnLesson2) {
             startActivity(new Intent(this, Lesson2.class));
             finishAffinity();
         } else if (id == R.id.btnLesson3) {

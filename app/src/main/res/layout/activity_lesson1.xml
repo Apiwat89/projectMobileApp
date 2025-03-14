@@ -10,7 +10,6 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnQuiz1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -73,7 +72,8 @@
                 android:padding="10dp"
                 android:text="จำนวนเต็ม ขนาด 32 บิต\n(-2,147,483,648 ถึง 2,147,483,647)\nตัวอย่าง: int num = 10;"
                 android:textSize="16sp"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -91,7 +91,8 @@
                 android:text="จำนวนเต็มที่เก็บได้เยอะขึ้น ขนาด 64 บิต\n(-9,223,372,036,854,775,808 ถึง 9,223,372,036,854,775,807)\nตัวอย่าง: long num = 100000L;"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,7 +110,8 @@
                 android:text="ทศนิยม ขนาด 32 บิต\n±3.40282347E+38F (6-7 หลัก)\nตัวอย่าง: float num = 10.99f;"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -127,7 +129,8 @@
                 android:text="ทศนิยมที่เก็บได้เยอะขึ้น ขนาด 64 บิต\n±1.8E+308 (15-16 หลัก)\nตัวอย่าง: double num = 10.1589;"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -145,7 +148,8 @@
                 android:text="ตัวอักษร 1 ตัว ขนาด 16 บิต\nตัวอักษรที่ใช้ Unicode (0 ถึง 65,535)\nตัวอย่าง: char grade = 'A';"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -163,7 +167,8 @@
                 android:text="ค่าจริง/เท็จ ขนาด 1 บิต\ntrue หรือ false\nตัวอย่าง: boolean isJavaFun = true;"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -181,7 +186,8 @@
                 android:text="จำนวนเต็ม ขนาด 16 บิต\n(-32,768 ถึง 32,767)\nตัวอย่าง: short num = 1000;"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -198,7 +204,8 @@
                 android:padding="10dp"
                 android:text="จำนวนเต็ม ขนาด 8 บิต\n(-128 ถึง 127)\nตัวอย่าง: byte num = 127;"
                 android:textSize="16sp"
-                android:typeface="monospace"/>
+                android:typeface="monospace"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -225,7 +232,8 @@
                 android:text="ข้อความ ขนาดไม่จำกัด\nข้อความ (string of characters)\nตัวอย่าง: String name = 'Hello, Java!';"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -243,7 +251,8 @@
                 android:text="อาร์เรย์ ขนาดขึ้นอยู่กับจำนวนสมาชิก\nชุดข้อมูลที่มีลำดับ (เช่น ตัวเลข, ข้อความ)\nตัวอย่าง: int[] numbers = {1,2,3,4,5};"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -262,7 +271,8 @@
 \nclass Car {\n       String model;\n       int year;\n       Car(String model, int year) {\n       this.model = model;\n       this.year = year;\n     }\n}"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -281,7 +291,8 @@
 \ninterface Animal {\n        void sound();\n}"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -299,7 +310,8 @@
                 android:text="ชนิดข้อมูลที่กำหนดค่าตายตัว\nตัวอย่าง:\nenum Day { SUNDAY, MONDAY, TUESDAY }\nDay today = Day.MONDAY;"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -317,7 +329,8 @@
                 android:text="อาร์เรย์ไดนามิก\nตัวอย่าง:\nArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();\nlist.add('Java');"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -334,7 +347,8 @@
                 android:padding="10dp"
                 android:text="โครงสร้างข้อมูลคีย์-ค่า\nตัวอย่าง:\nHashMap&lt;Integer, String&gt; map = new HashMap&lt;&gt;();\nmap.put(1, 'Java');"
                 android:textSize="16sp"
-                android:typeface="monospace"/>
+                android:typeface="monospace"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -352,7 +366,8 @@
                 android:text="ค่าคงที่ (Constant) เป็นค่าที่ไม่สามารถเปลี่ยนแปลงได้หลังจากกำหนดค่าแล้ว โดยใน Java สามารถใช้คำสั่ง final, static final และ enum ได้"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -370,7 +385,8 @@
                 android:text="final double PI = 3.14159;\n// PI จะไม่สามารถเปลี่ยนแปลงค่าได้หลังจากกำหนดแล้ว"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -388,7 +404,8 @@
                 android:text="class MathConstants {\n  static final double E = 2.71828;\n}\n// การเข้าถึง: MathConstants.E"
                 android:textSize="16sp"
                 android:typeface="monospace"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -405,7 +422,8 @@
                 android:padding="10dp"
                 android:text="enum Day {\n  SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY;\n}\n// การใช้งาน: Day today = Day.MONDAY;"
                 android:textSize="16sp"
-                android:typeface="monospace"/>
+                android:typeface="monospace"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
 
             <Button
                 android:id="@+id/btnQuiz1"

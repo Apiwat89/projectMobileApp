@@ -3,7 +3,16 @@
     <style name="Base.Theme.Project" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/kanit</item>
     </style>
 
     <style name="Theme.Project" parent="Base.Theme.Project" />
+
+    <style name="ThemeOverlay.Font16_18" parent="">
+        <item name="android:fontFamily">@font/kanitlittle</item>
+    </style>
+
+    <style name="ThemeOverlay.Font18_exam" parent="">
+        <item name="android:fontFamily">@font/kanitlittleexam</item>
+    </style>
 </resources>

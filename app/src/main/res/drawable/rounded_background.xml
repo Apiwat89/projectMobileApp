@@ -3,5 +3,5 @@
     android:shape="rectangle">
 
     <corners android:radius="16dp"/> <!-- กำหนดขอบโค้ง -->
-    <solid android:color="#99FFCC"/> <!-- สีพื้นหลัง -->
+    <solid android:color="#9FE5D5"/> <!-- สีพื้นหลัง -->
 </shape>

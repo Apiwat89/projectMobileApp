@@ -18,14 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- หัวข้อ -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="16dp"
-            android:text="JAVA"
-            android:textColor="#6A0199"
+            android:text="บทเรียน"
+            android:textColor="#905BDA"
             android:textSize="38sp"
             android:textStyle="bold" />
 
@@ -37,7 +36,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- หัวข้อ -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,7 +44,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- แสดง Progress เป็นตัวเลข -->
             <TextView
                 android:id="@+id/tvProgress"
                 android:layout_width="wrap_content"
@@ -57,7 +54,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Progress Bar Container (พื้นหลังสีขาว) -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/progressContainer"
                 android:layout_width="match_parent"
@@ -68,18 +64,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvProgress">
 
-                <!-- แท่ง Progress (สีม่วง) -->
                 <View
                     android:id="@+id/progressView"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/progress_foreground"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="5dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-
-        <!-- ปุ่มบทเรียน -->
 
         <Button
             android:id="@+id/btnLesson1"
@@ -94,7 +88,7 @@
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btnNextLesson"
+            android:id="@+id/btnLesson2"
             android:layout_width="match_parent"
             android:layout_height="60sp"
             android:layout_gravity="center"

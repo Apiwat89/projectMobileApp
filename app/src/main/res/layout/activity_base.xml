@@ -21,7 +21,7 @@
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#7B1FA2"
+        android:background="#905BDA"
         app:itemIconTint="@color/nav_icon_color"
         app:itemRippleColor="#E09CFF"
         app:itemTextColor="#FFFFFF"
