@@ -14,7 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Lesson5 extends BaseActivity implements View.OnClickListener {
     private ImageButton btnBack;
-    private Button btnBackLesson;
+    private Button btnQuiz5, btnBackLesson;
+    private Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +23,13 @@ public class Lesson5 extends BaseActivity implements View.OnClickListener {
         setLayout(R.layout.activity_lesson5);
 
         btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(this);
+        btnQuiz5 = findViewById(R.id.btnQuiz5);
         btnBackLesson = findViewById(R.id.btnBackLesson);
+        btnBack.setOnClickListener(this);
+        btnQuiz5.setOnClickListener(this);
         btnBackLesson.setOnClickListener(this);
+
+        database = new Database(this);
     }
 
     @Override
@@ -36,6 +41,8 @@ public class Lesson5 extends BaseActivity implements View.OnClickListener {
         } else if (id == R.id.btnBackLesson) {
             startActivity(new Intent(this, Lesson4.class));
             finish();
+        } else if (id == R.id.btnQuiz5) {
+            startActivity(new Intent(this, Quiz5.class));
         }
     }
 

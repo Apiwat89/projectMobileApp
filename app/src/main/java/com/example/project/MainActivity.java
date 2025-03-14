@@ -13,6 +13,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private TextView tvProgress;
     private int progressValue = 0;
     private Button btnLesson1, btnLesson2, btnLesson3, btnLesson4, btnLesson5;
+    private Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btnLesson3.setOnClickListener(this);
         btnLesson4.setOnClickListener(this);
         btnLesson5.setOnClickListener(this);
+
+        database = new Database(this);
     }
 
     private void updateProgress(int progress) {

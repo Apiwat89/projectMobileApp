@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quiz4">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="37dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="343dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="แบบทดสอบวิชา Java\nบทที่ 4 คำสั่งควบคุม"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nคำสั่งควบคุมแบบเลือก (Selection Statements) ใน Java มีอะไรบ้าง?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q1a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) if, switch" />
+
+                <RadioButton
+                    android:id="@+id/q1b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) for, while" />
+
+                <RadioButton
+                    android:id="@+id/q1c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) break, continue" />
+
+                <RadioButton
+                    android:id="@+id/q1d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) try, catch" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nคำสั่ง if ใน Java ใช้ทำอะไร?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q2a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) วนลูป" />
+
+                <RadioButton
+                    android:id="@+id/q2b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) ตรวจสอบเงื่อนไข" />
+
+                <RadioButton
+                    android:id="@+id/q2c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) รับค่าจากผู้ใช้" />
+
+                <RadioButton
+                    android:id="@+id/q2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) แสดงผลข้อความ" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nข้อใดเป็นรูปแบบที่ถูกต้องของ if-else ใน Java?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q3a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) if (x &gt; 10) System.out.println(&quot;X is big&quot;);\n
+else System.out.println(&quot;X is small&quot;);" />
+
+                <RadioButton
+                    android:id="@+id/q3b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) if x &gt; 10 System.out.println(&quot;X is big&quot;);\n
+else System.out.println(&quot;X is small&quot;);" />
+
+                <RadioButton
+                    android:id="@+id/q3c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) if (x &gt; 10) then System.out.println(&quot;X is big&quot;);
+else System.out.println(&quot;X is small&quot;);" />
+
+                <RadioButton
+                    android:id="@+id/q3d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D)  if {x &gt; 10} System.out.println(&quot;X is big&quot;);
+else System.out.println(&quot;X is small&quot;);" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nคำสั่ง switch เหมาะสำหรับการทำงานแบบใด?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q4a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) การวนซ้ำ" />
+
+                <RadioButton
+                    android:id="@+id/q4b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) การตรวจสอบค่าหลายค่า" />
+
+                <RadioButton
+                    android:id="@+id/q4c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) การแสดงผล" />
+
+                <RadioButton
+                    android:id="@+id/q4d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) การเรียกใช้เมธอด" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nคำสั่ง break ใช้สำหรับอะไรใน switch statement?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q5a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) หยุดการทำงานของ switch หลังจากเงื่อนไขตรงกัน" />
+
+                <RadioButton
+                    android:id="@+id/q5b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) ทำให้ switch ทำงานเร็วขึ้น" />
+
+                <RadioButton
+                    android:id="@+id/q5c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) ข้ามไปยัง case ถัดไปเสมอ" />
+
+                <RadioButton
+                    android:id="@+id/q5d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) ไม่มีผลอะไรกับ switch" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nคำสั่ง for, while, และ do-while ใช้สำหรับอะไร?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q6a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) ควบคุมการทำงานของเมธอด" />
+
+                <RadioButton
+                    android:id="@+id/q6b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) ควบคุมการวนซ้ำ (Loop)" />
+
+                <RadioButton
+                    android:id="@+id/q6c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) ควบคุมการเลือกเงื่อนไข" />
+
+                <RadioButton
+                    android:id="@+id/q6d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) ควบคุมการแสดงผล" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nคำสั่ง continue ใช้ทำอะไรในลูป?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q7a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) หยุดการทำงานของโปรแกรม" />
+
+                <RadioButton
+                    android:id="@+id/q7b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) ข้ามการทำงานของรอบปัจจุบันและไปยังรอบถัดไป" />
+
+                <RadioButton
+                    android:id="@+id/q7c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) ออกจากลูปทันที" />
+
+                <RadioButton
+                    android:id="@+id/q7d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) ทำให้ลูปเริ่มใหม่ตั้งแต่ต้น" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nในโค้ดต่อไปนี้ ผลลัพธ์จะเป็นอย่างไร?\n
+int i = 0;\n
+    while (i &lt; 3) {\n
+    System.out.println(i);\n
+    i++;\n
+}"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q8a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) แสดง 0 1 2" />
+
+                <RadioButton
+                    android:id="@+id/q8b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) แสดง 1 2 3" />
+
+                <RadioButton
+                    android:id="@+id/q8c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) ไม่มีการแสดงผล" />
+
+                <RadioButton
+                    android:id="@+id/q8d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) รันไม่มีที่สิ้นสุด" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nแก้ไข code ให้ถูกต้อง"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/q9ans"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="switch (day) {\n
+    case 1:\n
+        System.out.println(&quot;Monday&quot;);\n
+    case 2:\n
+        System.out.println(&quot;Tuesday&quot;);\n
+    default:\n
+        System.out.println(&quot;Other day&quot;);\n}"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nแก้ไข code ให้ถูกต้อง"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/q10ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:background="#E0E0E0"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:text="for (int i = 0; i &lt; 5; i++)\n
+    System.out.println(i);\n
+    System.out.println(&quot;Done!&quot;);"
+                android:theme="@style/ThemeOverlay.Font16_18" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="97dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="15dp"
+        android:text="ส่ง"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

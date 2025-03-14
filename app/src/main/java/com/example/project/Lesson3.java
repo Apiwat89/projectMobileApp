@@ -6,15 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 public class Lesson3 extends BaseActivity implements View.OnClickListener {
     private ImageButton btnBack;
-    private Button btnBackLesson, btnNextLesson;
+    private Button btnQuiz3, btnBackLesson, btnNextLesson;
+    private Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +17,15 @@ public class Lesson3 extends BaseActivity implements View.OnClickListener {
         setLayout(R.layout.activity_lesson3);
 
         btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(this);
+        btnQuiz3 = findViewById(R.id.btnQuiz3);
         btnBackLesson = findViewById(R.id.btnBackLesson);
-        btnBackLesson.setOnClickListener(this);
         btnNextLesson = findViewById(R.id.btnNextLesson);
+        btnBack.setOnClickListener(this);
+        btnQuiz3.setOnClickListener(this);
+        btnBackLesson.setOnClickListener(this);
         btnNextLesson.setOnClickListener(this);
+
+        database = new Database(this);
     }
 
     @Override
@@ -41,6 +40,8 @@ public class Lesson3 extends BaseActivity implements View.OnClickListener {
         } else if (id == R.id.btnNextLesson) {
             startActivity(new Intent(this, Lesson4.class));
             finish();
+        } else if (id == R.id.btnQuiz3) {
+            startActivity(new Intent(this, Quiz3.class));
         }
     }
 

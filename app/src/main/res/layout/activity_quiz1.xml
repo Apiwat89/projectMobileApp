@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quiz1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="37dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="343dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="แบบทดสอบวิชา Java\nบทที่ 1 ชนิดข้อมูล"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nข้อใดเป็นประเภทของข้อมูลพื้นฐาน (Primitive Data Types) ในภาษา Java?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q1a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) String" />
+
+                <RadioButton
+                    android:id="@+id/q1b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) int" />
+
+                <RadioButton
+                    android:id="@+id/q1c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) Array" />
+
+                <RadioButton
+                    android:id="@+id/q1d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) Class" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nค่าคงที่ (Constant) ใน Java กำหนดโดยการใช้คีย์เวิร์ดใด?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q2a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) final" />
+
+                <RadioButton
+                    android:id="@+id/q2b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) const" />
+
+                <RadioButton
+                    android:id="@+id/q2c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) var" />
+
+                <RadioButton
+                    android:id="@+id/q2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) static" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nชนิดข้อมูล double ใช้สำหรับเก็บข้อมูลประเภทใด?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q3a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) ตัวเลขจำนวนเต็ม" />
+
+                <RadioButton
+                    android:id="@+id/q3b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) ตัวเลขทศนิยม" />
+
+                <RadioButton
+                    android:id="@+id/q3c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) ตัวอักษร" />
+
+                <RadioButton
+                    android:id="@+id/q3d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) ค่า boolean" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nตัวแปรชนิด boolean สามารถมีค่าใดได้บ้าง?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q4a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) true / false" />
+
+                <RadioButton
+                    android:id="@+id/q4b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) 0 / 1" />
+
+                <RadioButton
+                    android:id="@+id/q4c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) &quot;true&quot; / &quot;false&quot;" />
+
+                <RadioButton
+                    android:id="@+id/q4d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) A และ B" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nค่าตั้งต้นของตัวแปรชนิด int ใน Java คืออะไร (หากไม่ได้กำหนดค่าเริ่มต้นเอง)?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q5a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) 0" />
+
+                <RadioButton
+                    android:id="@+id/q5b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) null" />
+
+                <RadioButton
+                    android:id="@+id/q5c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) -1" />
+
+                <RadioButton
+                    android:id="@+id/q5d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) ไม่มีค่าเริ่มต้น" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nข้อใดเป็นชนิดข้อมูลที่ใช้เก็บตัวอักษรเพียงตัวเดียวใน Java?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q6a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) string" />
+
+                <RadioButton
+                    android:id="@+id/q6b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) char" />
+
+                <RadioButton
+                    android:id="@+id/q6c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) character" />
+
+                <RadioButton
+                    android:id="@+id/q6d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) text" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nข้อใด ไม่ใช่ ชนิดข้อมูลพื้นฐาน (Primitive Data Type) ใน Java?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q7a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) byte" />
+
+                <RadioButton
+                    android:id="@+id/q7b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) float" />
+
+                <RadioButton
+                    android:id="@+id/q7c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) String" />
+
+                <RadioButton
+                    android:id="@+id/q7d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) long" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nชนิดข้อมูล byte ใน Java สามารถเก็บค่าตัวเลขได้ในช่วงใด?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q8a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) -128 ถึง 127" />
+
+                <RadioButton
+                    android:id="@+id/q8b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) 0 ถึง 255" />
+
+                <RadioButton
+                    android:id="@+id/q8c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) -32,768 ถึง 32,767" />
+
+                <RadioButton
+                    android:id="@+id/q8d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) -2,147,483,648 ถึง 2,147,483,647" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nแก้ไข code ให้ถูกต้อง"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/q9ans"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:text="system.outkk.print(&quot;hello&quot;);"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nแก้ไข code ให้ถูกต้อง"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/q10ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:background="#E0E0E0"
+                android:ems="10"
+                android:inputType="text"
+                android:padding="10dp"
+                android:text="int number = &quot;10&quot;;"
+                android:theme="@style/ThemeOverlay.Font16_18" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="97dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="15dp"
+        android:text="ส่ง"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

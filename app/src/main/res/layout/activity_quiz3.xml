@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quiz3">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="37dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="343dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="แบบทดสอบวิชา Java\nบทที่ 3 ตัวดำเนินการ"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nตัวดำเนินการทางคณิตศาสตร์ (Arithmetic Operators) ใน Java มีอะไรบ้าง?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q1a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) +, -, *, /, %" />
+
+                <RadioButton
+                    android:id="@+id/q1b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) &amp;&amp;, ||, !" />
+
+                <RadioButton
+                    android:id="@+id/q1c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) &gt;, &lt;, &gt;=, &lt;=" />
+
+                <RadioButton
+                    android:id="@+id/q1d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) =, +=, -=, *=" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\n ผลลัพธ์ของคำสั่ง System.out.println(10 % 3); คืออะไร?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q2a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) 1" />
+
+                <RadioButton
+                    android:id="@+id/q2b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) 3" />
+
+                <RadioButton
+                    android:id="@+id/q2c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) 0.3" />
+
+                <RadioButton
+                    android:id="@+id/q2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) 10" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nข้อใดคือ ตัวดำเนินการเปรียบเทียบ (Comparison Operators)?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q3a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) +, -, *, /" />
+
+                <RadioButton
+                    android:id="@+id/q3b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) &amp;&amp;, ||, !" />
+
+                <RadioButton
+                    android:id="@+id/q3c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) &gt;, &lt;, &gt;=, &lt;=, ==, !=" />
+
+                <RadioButton
+                    android:id="@+id/q3d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) =, +=, -=" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nผลลัพธ์ของ true &amp;&amp; false คืออะไร?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q4a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) true" />
+
+                <RadioButton
+                    android:id="@+id/q4b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) false" />
+
+                <RadioButton
+                    android:id="@+id/q4c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) 1" />
+
+                <RadioButton
+                    android:id="@+id/q4d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) 0" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nข้อใดคือ ตัวดำเนินการเพิ่มค่าและลดค่า (Increment and Decrement Operators)?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q5a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) ++, --" />
+
+                <RadioButton
+                    android:id="@+id/q5b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) +=, -=" />
+
+                <RadioButton
+                    android:id="@+id/q5c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) &amp;, |" />
+
+                <RadioButton
+                    android:id="@+id/q5d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) &amp;&amp;, ||" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nผลลัพธ์ของคำสั่งต่อไปนี้คืออะไร?\nint x = 5\nSystem.out.println(++x);"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q6a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) 5" />
+
+                <RadioButton
+                    android:id="@+id/q6b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) 6" />
+
+                <RadioButton
+                    android:id="@+id/q6c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) x" />
+
+                <RadioButton
+                    android:id="@+id/q6d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) error" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nข้อใดเป็นตัวดำเนินการที่ใช้กำหนดค่า (Assignment Operators)?"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q7a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) =" />
+
+                <RadioButton
+                    android:id="@+id/q7b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) +=" />
+
+                <RadioButton
+                    android:id="@+id/q7c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) -=" />
+
+                <RadioButton
+                    android:id="@+id/q7d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) ถูกทุกข้อ" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nคำสั่งต่อไปนี้ให้ผลลัพธ์เป็นอะไร?\nint x = 10;\nx += 5;\nSystem.out.println(x);"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.Font16_18">
+
+                <RadioButton
+                    android:id="@+id/q8a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A) 10" />
+
+                <RadioButton
+                    android:id="@+id/q8b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B) 5" />
+
+                <RadioButton
+                    android:id="@+id/q8c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C) 15" />
+
+                <RadioButton
+                    android:id="@+id/q8d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D) error" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nแก้ไข code ให้ถูกต้อง"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/q9ans"
+                android:background="#E0E0E0"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="int a = 10;\nint b = 3;\nint result = a // b;"
+                android:theme="@style/ThemeOverlay.Font16_18"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:padding="4dp"
+                android:text="\nแก้ไข code ให้ถูกต้อง"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/q10ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:background="#E0E0E0"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:text="boolean check = (5 > 3) &amp;&amp; (2 == &quot;2&quot;);"
+                android:theme="@style/ThemeOverlay.Font16_18" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="97dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="15dp"
+        android:text="ส่ง"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -104,7 +104,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:backgroundTint="#474747"
-            android:text="บทที่ 3 ชนิดข้อมูล"
+            android:text="บทที่ 3 ตัวดำเนินการ"
             android:textColor="#FFFFFF" />
 
         <Button
