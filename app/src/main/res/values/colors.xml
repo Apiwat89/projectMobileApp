@@ -5,4 +5,5 @@
     <color name="progress_initial">#2196F3</color>
     <color name="icon_default">#FFFFFF</color>
     <color name="icon_selected">#000000</color>
+    <color name="purple">#7F43D2</color>
 </resources>

@@ -8,10 +8,14 @@ import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private View progressView;
     private TextView tvProgress;
     private int progressValue = 0;
+    private int [] lessonSuccess;
     private Button btnLesson1, btnLesson2, btnLesson3, btnLesson4, btnLesson5;
     private Database database;
 
@@ -23,7 +27,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         progressView = findViewById(R.id.progressView);
         tvProgress = findViewById(R.id.tvProgress);
-        updateProgress(progressValue);
 
         btnLesson1 = findViewById(R.id.btnLesson1);
         btnLesson2 = findViewById(R.id.btnLesson2);
@@ -37,6 +40,24 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btnLesson5.setOnClickListener(this);
 
         database = new Database(this);
+
+        ConnectData(userID);
+        updateProgress(progressValue);
+        updateButton(lessonSuccess);
+    }
+
+    private void ConnectData(String UserID) {
+        ArrayList<HashMap<String, Integer>> Score = database.getLessonsLearned(UserID);
+        if (!Score.isEmpty()) {
+            progressValue = Score.size();
+            lessonSuccess = new int[Score.size()];
+            for (int i = 0; i < Score.size(); i++) {
+                lessonSuccess[i] = Score.get(i).get("lessonID");
+            }
+        } else {
+            progressValue = 0;
+            lessonSuccess = new int[0];
+        }
     }
 
     private void updateProgress(int progress) {
@@ -52,11 +73,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         progressView.requestLayout();
     }
 
+    private void updateButton(int[] lesson) {
+        for (int n = 0; n < lesson.length; n++) {
+            if (lesson[n] == 1) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 2) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 3) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 4) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 5) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+        }
+    }
+
     @Override
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btnLesson1) {
-            startActivity(new Intent(this, Lesson1.class));
+            startActivity(new Intent(this, test.class));
             finishAffinity();
         } else if (id == R.id.btnLesson2) {
             startActivity(new Intent(this, Lesson2.class));

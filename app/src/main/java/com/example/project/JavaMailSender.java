@@ -10,7 +10,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class JavaMailSender {
-    private final String senderEmail = "your_email@gmail.com";
+    private final String senderEmail = "s6506021620211@email.kmutnb.ac.th";
     private final String senderPassword = BuildConfig.EMAIL_PASSWORD;
 
     public void sendVerificationCode(String recipientEmail, String otpCode) {

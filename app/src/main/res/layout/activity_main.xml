@@ -95,7 +95,8 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="#474747"
             android:text="บทที่ 2 ตัวแปร"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/btnLesson3"
@@ -105,7 +106,8 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="#474747"
             android:text="บทที่ 3 ตัวดำเนินการ"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/btnLesson4"
@@ -115,7 +117,8 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="#474747"
             android:text="บทที่ 4 คำสั่งควบคุม"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/btnLesson5"
@@ -125,7 +128,8 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="#474747"
             android:text="บทที่ 5 ฟังก์ชัน"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

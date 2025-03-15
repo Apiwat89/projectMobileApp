@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Database extends SQLiteOpenHelper {
     private static final String Database_name = "JavaQuest.db";
@@ -65,8 +69,20 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(createUsersTable);
         sqLiteDatabase.execSQL(createLessonsTable);
         sqLiteDatabase.execSQL(createScoresTable);
-        insertLesson();
-        testinsertUser();
+
+        // for table lessons ///////////////////////////////////////////////////////////////////////
+        String insertLessons = "INSERT INTO " + Table_Lessons + " (" + Lessons_LessonName + ") VALUES " +
+                "('DataType'), ('Variable'), ('Operator'), ('Command'), ('Function');";
+        sqLiteDatabase.execSQL(insertLessons);
+
+        String sql = "INSERT INTO " + Table_Users + " (" + Users_Username + ", " + Users_Password + ", " + Users_Email + ") " +
+                "VALUES (?, ?, ?)";
+        SQLiteStatement stmt = sqLiteDatabase.compileStatement(sql);
+        stmt.bindString(1, "apiwat");
+        stmt.bindString(2, "apiwat");
+        stmt.bindString(3, "apiwat89123@gmail.com");
+        stmt.executeInsert();
+        stmt.close();
     }
 
     @Override
@@ -77,53 +93,105 @@ public class Database extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    // for table users
-    public void testinsertUser() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(Users_Username, "apiwat");
-        values.put(Users_Password, "apiwat");
-        values.put(Users_Email, "apiwat@gamil.com");
-        db.insert(Table_Users, null, values);
-        db.close();
-    }
-
+    // for table users /////////////////////////////////////////////////////////////////////////////
     public boolean insertUser(String username, String password, String email) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Users_Username, username);
         values.put(Users_Password, password);
         values.put(Users_Email, email);
+
         long result = db.insert(Table_Users, null, values);
         db.close();
+
         return result == -1 ? false : true;
+    }
+
+    public Cursor getAllUser() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+ Table_Users, null);
+
+        return res;
     }
 
     public boolean getUserEmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM " + Table_Users + " WHERE " + Users_Email + " = ?", new String[]{email});
-        db.close();
-        return (res != null && res.getCount() > 0) ? true : false;
+        Cursor res = db.rawQuery("SELECT * FROM " + Table_Users + " WHERE " + Users_Email + " = ?",
+                new String[]{email});
+
+        return res != null ? true : false;
     }
 
-    public boolean updatUserPassword(String email, String newPassword) {
+    public boolean updateUserPassword(String email, String newPassword) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Users_Password, newPassword);
-        int result = db.update(Table_Users, values, Users_Email + " = ?", new String[]{email});
-        db.close();
+
+        int result = db.update(Table_Users, values, Users_Email + " = ?",
+                new String[]{email});
+
         return result > 0 ? true : false;
     }
 
-    // for table lessons
-    public void insertLesson() {
+    // for table scores ////////////////////////////////////////////////////////////////////////////
+    public ArrayList<HashMap<String, Integer>> getLessonsLearned(String userID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT " + Scores_LessonID + ", " + Scores_Score +
+                        " FROM " + Table_Scores + " WHERE " + Scores_UserID + " = ?",
+                new String[]{userID});
+
+        ArrayList<HashMap<String, Integer>> lessons = new ArrayList<>();
+        if (res != null) {
+            while (res.moveToNext()) {
+                HashMap<String, Integer> lessonData = new HashMap<>();
+                lessonData.put("lessonID", res.getInt(0));
+                lessonData.put("score", res.getInt(1));
+                lessons.add(lessonData);
+            }
+            res.close();
+        }
+        return lessons;
+    }
+
+    public boolean getScoreUser(String lessonID, String userID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + Table_Scores + " WHERE " +
+                Scores_LessonID + " = ? AND " + Scores_UserID + " = ?",
+                new String[]{lessonID, userID});
+
+        return res != null ? true : false;
+    }
+
+    public boolean insertScore(String userID, String lessonID, int score, String status) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        String [] lesson = {"DataType", "Variable", "Operator", "Command", "Function"};
-        for (int n = 0; n < lesson.length; n++) {
-            values.put(Lessons_LessonName, lesson[n]);
-            db.insert(Table_Lessons, null, values);
-        }
+        values.put(Scores_UserID, userID);
+        values.put(Scores_LessonID, lessonID);
+        values.put(Scores_Score, score);
+        values.put(Scores_Status, status);
+
+        long result = db.insert(Table_Scores, null, values);
         db.close();
+
+        return result == -1 ? false : true;
+    }
+
+    public boolean updateScore(String userID, String lessonID, int score, String status) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Scores_Score, score);
+        values.put(Scores_Status, status);
+
+        int rowsAffected = db.update(Table_Scores, values,
+                Scores_UserID + " = ? AND " + Scores_LessonID + " = ?",
+                new String[]{userID, lessonID});
+        return rowsAffected > 0;
+    }
+
+    public Cursor getAllScore() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+ Table_Scores, null);
+
+        return res;
     }
 }

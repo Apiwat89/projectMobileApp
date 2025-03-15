@@ -9,11 +9,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BaseActivity extends AppCompatActivity {
     protected BottomNavigationView bottomNavigationView;
+    protected String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+
+        // ดึง userID จาก Intent ที่ส่งมาจาก LoginActivity
+//        userID = getIntent().getStringExtra("USER_ID");
+        userID = "1";
 
         bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -21,20 +26,27 @@ public class BaseActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.action_home) {
                     if (!(BaseActivity.this instanceof MainActivity)) {
-                        startActivity(new Intent(BaseActivity.this, MainActivity.class));
+                        Intent intent = new Intent(BaseActivity.this, MainActivity.class);
+                        startActivity(intent);
                         finish();
-                    } return true;
+                    }
+                    return true;
                 } else if (item.getItemId() == R.id.action_quiz) {
                     if (!(BaseActivity.this instanceof QuizActivity)) {
-                        startActivity(new Intent(BaseActivity.this, QuizActivity.class));
+                        Intent intent = new Intent(BaseActivity.this, QuizActivity.class);
+                        startActivity(intent);
                         finish();
-                    } return true;
+                    }
+                    return true;
                 } else if (item.getItemId() == R.id.action_program) {
                     if (!(BaseActivity.this instanceof ProgramActivity)) {
-                        startActivity(new Intent(BaseActivity.this, ProgramActivity.class));
+                        Intent intent = new Intent(BaseActivity.this, ProgramActivity.class);
+                        startActivity(intent);
                         finish();
-                    } return true;
-                } return true;
+                    }
+                    return true;
+                }
+                return true;
             }
         });
     }
