@@ -107,19 +107,19 @@ public class Database extends SQLiteOpenHelper {
         return result == -1 ? false : true;
     }
 
-    public Cursor getAllUser() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+ Table_Users, null);
-
-        return res;
-    }
+//    public Cursor getAllUser() {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor res = db.rawQuery("SELECT * FROM "+ Table_Users, null);
+//
+//        return res;
+//    }
 
     public boolean getUserEmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM " + Table_Users + " WHERE " + Users_Email + " = ?",
                 new String[]{email});
 
-        return res != null ? true : false;
+        return (res != null && res.getCount() > 0) ? true : false;
     }
 
     public boolean updateUserPassword(String email, String newPassword) {
@@ -159,7 +159,7 @@ public class Database extends SQLiteOpenHelper {
                 Scores_LessonID + " = ? AND " + Scores_UserID + " = ?",
                 new String[]{lessonID, userID});
 
-        return res != null ? true : false;
+        return (res != null && res.getCount() > 0) ? true : false;
     }
 
     public boolean insertScore(String userID, String lessonID, int score, String status) {
@@ -182,10 +182,10 @@ public class Database extends SQLiteOpenHelper {
         values.put(Scores_Score, score);
         values.put(Scores_Status, status);
 
-        int rowsAffected = db.update(Table_Scores, values,
+        int result = db.update(Table_Scores, values,
                 Scores_UserID + " = ? AND " + Scores_LessonID + " = ?",
                 new String[]{userID, lessonID});
-        return rowsAffected > 0;
+        return result > 0;
     }
 
     public Cursor getAllScore() {

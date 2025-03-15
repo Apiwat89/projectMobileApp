@@ -76,10 +76,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void updateButton(int[] lesson) {
         for (int n = 0; n < lesson.length; n++) {
             if (lesson[n] == 1) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-            else if (lesson[n] == 2) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-            else if (lesson[n] == 3) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-            else if (lesson[n] == 4) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-            else if (lesson[n] == 5) btnLesson1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 2) btnLesson2.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 3) btnLesson3.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 4) btnLesson4.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
+            else if (lesson[n] == 5) btnLesson5.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
         }
     }
 

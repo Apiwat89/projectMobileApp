@@ -91,5 +91,4 @@ public class Quiz1 extends BaseActivity {
 
         status = score == 10 ? "All correct" : "Not entirely correct";
     }
-
 }
