@@ -1,19 +1,19 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Lesson5">
 
   <ScrollView
       android:id="@+id/scrollView"
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent">
+      app:layout_constraintTop_toTopOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,46 +32,46 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
           android:text="บทที่ 5\nฟังก์ชัน"
           android:textAlignment="center"
-          android:textSize="30sp"
-          android:textStyle="bold"
           android:textColor="#283593"
-          android:layout_marginBottom="16dp" />
+          android:textSize="30sp"
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginBottom="20dp"
           android:text="ฟังก์ชันในภาษา Java"
+          android:textColor="#000000"
           android:textSize="22sp"
-          android:textStyle="bold"
-          android:textColor="#000000"/>
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="ฟังก์ชัน (Function) ใน Java เป็นโค้ดที่สามารถนำกลับมาใช้ใหม่ได้ ช่วยให้โปรแกรมมีโครงสร้างที่ดีขึ้น มีสองประเภทหลัก: ฟังก์ชันที่ไม่มีค่ารีเทิร์น และฟังก์ชันที่มีค่ารีเทิร์น\n"
-          android:textSize="18sp"
           android:textColor="#333333"
-          android:theme="@style/ThemeOverlay.Font16_18"/>
+          android:textSize="18sp"
+          android:theme="@style/ThemeOverlay.Font16_18" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="1. ฟังก์ชันที่ไม่มีค่ารีเทิร์น (Void Function)"
+          android:textColor="#000000"
           android:textSize="20sp"
-          android:textStyle="bold"
-          android:textColor="#000000"/>
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="ฟังก์ชันประเภทนี้ไม่มีค่าที่ส่งกลับ ใช้คำว่า `void` ตัวอย่าง:"
-          android:textSize="18sp"
-          android:textColor="#333333"
           android:layout_marginTop="10dp"
-          android:layout_marginBottom="10dp"/>
+          android:layout_marginBottom="10dp"
+          android:text="ฟังก์ชันประเภทนี้ไม่มีค่าที่ส่งกลับ ใช้คำว่า `void` ตัวอย่าง:"
+          android:textColor="#333333"
+          android:textSize="18sp" />
 
       <TextView
           android:layout_width="match_parent"
@@ -87,20 +87,20 @@
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="25dp"
           android:text="2. ฟังก์ชันที่มีค่ารีเทิร์น (Return Function)"
-          android:textSize="20sp"
-          android:textStyle="bold"
           android:textColor="#000000"
-          android:layout_marginTop="25dp"/>
+          android:textSize="20sp"
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="ฟังก์ชันที่มีค่ารีเทิร์นจะส่งค่ากลับไปยังส่วนที่เรียกใช้งาน ตัวอย่าง:"
-          android:textSize="18sp"
-          android:textColor="#333333"
           android:layout_marginTop="10dp"
-          android:layout_marginBottom="10dp"/>
+          android:layout_marginBottom="10dp"
+          android:text="ฟังก์ชันที่มีค่ารีเทิร์นจะส่งค่ากลับไปยังส่วนที่เรียกใช้งาน ตัวอย่าง:"
+          android:textColor="#333333"
+          android:textSize="18sp" />
 
       <TextView
           android:layout_width="match_parent"
@@ -118,9 +118,9 @@
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"
           android:text="\n\u2022 ฟังก์ชัน (Method) คืออะไร?"
+          android:textColor="#000000"
           android:textSize="22sp"
-          android:textStyle="bold"
-          android:textColor="#000000"/>
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
           android:layout_marginBottom="10dp"
           android:text="ฟังก์ชัน (Method) คือกลุ่มของโค้ดที่ทำงานเฉพาะเจาะจง ช่วยให้โค้ดเป็นระเบียบและนำกลับมาใช้ซ้ำได้"
           android:textSize="18sp"
-          android:theme="@style/ThemeOverlay.Font16_18"/>
+          android:theme="@style/ThemeOverlay.Font16_18" />
 
       <TextView
           android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
           android:layout_marginBottom="10dp"
           android:text="ตัวอย่างการสร้างฟังก์ชันใน Java:"
           android:textSize="18sp"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="match_parent"
@@ -145,33 +145,33 @@
           android:padding="10dp"
           android:text="public int add(int a, int b) {\n  return a + b;\n}"
           android:textSize="16sp"
-          android:typeface="monospace"
-          android:theme="@style/ThemeOverlay.Font16_18"/>
+          android:theme="@style/ThemeOverlay.Font16_18"
+          android:typeface="monospace" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"
           android:text="\n\u2022 Static vs Instance Method"
+          android:textColor="#000000"
           android:textSize="22sp"
-          android:textStyle="bold"
-          android:textColor="#000000"/>
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="\u2714 Static Method: เรียกใช้โดยไม่ต้องสร้างอ็อบเจ็กต์\n\u2714 Instance Method: ต้องสร้างอ็อบเจ็กต์ก่อนเรียกใช้\n"
           android:textSize="18sp"
-          android:theme="@style/ThemeOverlay.Font16_18"/>
+          android:theme="@style/ThemeOverlay.Font16_18" />
 
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"
           android:text="\u2022 Lambda Expression ใน Java"
+          android:textColor="#000000"
           android:textSize="22sp"
-          android:textStyle="bold"
-          android:textColor="#000000"/>
+          android:textStyle="bold" />
 
       <TextView
           android:layout_width="match_parent"
@@ -180,8 +180,8 @@
           android:padding="10dp"
           android:text="(int x, int y) -> x + y"
           android:textSize="16sp"
-          android:typeface="monospace"
-          android:theme="@style/ThemeOverlay.Font16_18"/>
+          android:theme="@style/ThemeOverlay.Font16_18"
+          android:typeface="monospace" />
 
 
       <Button

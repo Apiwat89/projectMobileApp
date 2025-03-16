@@ -1,19 +1,19 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Lesson2">
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,58 +32,58 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:text="บทที่ 2\nตัวแปร"
                 android:textAlignment="center"
-                android:textSize="30sp"
-                android:textStyle="bold"
                 android:textColor="#283593"
-                android:layout_marginBottom="16dp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="ตัวแปร (Variable) ในภาษา Java"
+                android:textColor="#000000"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="#000000"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ตัวแปร (Variable) คือ พื้นที่ในหน่วยความจำที่ใช้เก็บข้อมูลในโปรแกรม โดยตัวแปรแต่ละตัวต้องมีประเภทข้อมูลที่แน่นอน และสามารถกำหนดค่าได้เมื่อใช้งาน\n"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:lineSpacingExtra="3dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="ตัวแปร (Variable) คือ พื้นที่ในหน่วยความจำที่ใช้เก็บข้อมูลในโปรแกรม โดยตัวแปรแต่ละตัวต้องมีประเภทข้อมูลที่แน่นอน และสามารถกำหนดค่าได้เมื่อใช้งาน\n"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="การประกาศตัวแปรใน Java"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="รูปแบบการประกาศตัวแปรใน Java :"
-                android:textSize="18sp"
                 android:textColor="#000000"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ประเภทตัวแปร ชื่อตัวแปร = ค่าเริ่มต้น;"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="10dp"
                 android:lineSpacingExtra="3dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="ประเภทตัวแปร ชื่อตัวแปร = ค่าเริ่มต้น;"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                 android:text="ตัวอย่างการใช้งาน :"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:theme="@style/ThemeOverlay.Font18_exam"/>
+                android:theme="@style/ThemeOverlay.Font18_exam" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -101,26 +101,26 @@
                 android:padding="10dp"
                 android:text="int age = 25; //ตัวแปรเก็บค่าตัวเลขจำนวนเต็ม\ndouble price = 19.99; //ตัวแปรเก็บค่าตัวเลขทศนิยม\nboolean isJavaFun = true; //ตัวแปรเก็บค่า true หรือ false\nString name = 'John'; //ตัวแปรเก็บข้อความ"
                 android:textSize="16sp"
-                android:typeface="monospace"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:theme="@style/ThemeOverlay.Font16_18"
+                android:typeface="monospace" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="\nประเภทของตัวแปรใน Java"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Java มีประเภทของตัวแปรหลัก ๆ ดังนี้:"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:layout_marginBottom="10dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="Java มีประเภทของตัวแปรหลัก ๆ ดังนี้:"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -128,16 +128,16 @@
                 android:layout_marginBottom="10dp"
                 android:text="\u2022 ตัวแปรแบบ Primitive (เก็บค่าพื้นฐาน) ได้แก่ :"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="- int (จำนวนเต็ม): int x = 10;\n- double (จำนวนทศนิยม): double y = 5.99;\n- char (อักขระเดี่ยว): char letter = 'A';\n- boolean (ค่าจริง/เท็จ): boolean isTrue = true;"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:layout_marginBottom="10dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="- int (จำนวนเต็ม): int x = 10;\n- double (จำนวนทศนิยม): double y = 5.99;\n- char (อักขระเดี่ยว): char letter = 'A';\n- boolean (ค่าจริง/เท็จ): boolean isTrue = true;"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -145,33 +145,33 @@
                 android:layout_marginBottom="10dp"
                 android:text="\u2022 ตัวแปรแบบ Reference (เก็บอ้างอิงไปยัง Object) เช่น :"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="- String (ข้อความ): String name = 'Alice';\n- Array (อาร์เรย์): int[] numbers = {1, 2, 3};\n- Object อื่น ๆ ที่สร้างขึ้นจาก Class\n"
-                android:textSize="18sp"
                 android:textColor="#000000"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="ตัวแปรค่าคงที่ (Constant)"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ตัวแปรค่าคงที่ (Constant) เป็นตัวแปรที่ไม่สามารถเปลี่ยนค่าได้หลังจากกำหนดค่าเริ่มต้น โดยใช้คำสั่ง final"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:layout_marginBottom="10dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="ตัวแปรค่าคงที่ (Constant) เป็นตัวแปรที่ไม่สามารถเปลี่ยนค่าได้หลังจากกำหนดค่าเริ่มต้น โดยใช้คำสั่ง final"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -180,7 +180,7 @@
                 android:text="ตัวอย่างการใช้ค่าคงที่ :"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:theme="@style/ThemeOverlay.Font18_exam"/>
+                android:theme="@style/ThemeOverlay.Font18_exam" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -189,26 +189,26 @@
                 android:padding="10dp"
                 android:text="final double PI = 3.14159;\nfinal int MAX_USERS = 100;"
                 android:textSize="16sp"
-                android:typeface="monospace"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:theme="@style/ThemeOverlay.Font16_18"
+                android:typeface="monospace" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="\nการใช้ var ใน Java"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ใน Java 10 ขึ้นไป มีการเพิ่ม `var` ที่ใช้ในการกำหนดประเภทตัวแปร โดยไม่ต้องระบุประเภทตัวแปรโดยตรง ระบบจะระบุประเภทของตัวแปรตามค่าที่กำหนดให้ ตัวแปรจะได้รับประเภทจากค่าเริ่มต้นของมัน เช่น :"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:layout_marginBottom="10dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="ใน Java 10 ขึ้นไป มีการเพิ่ม `var` ที่ใช้ในการกำหนดประเภทตัวแปร โดยไม่ต้องระบุประเภทตัวแปรโดยตรง ระบบจะระบุประเภทของตัวแปรตามค่าที่กำหนดให้ ตัวแปรจะได้รับประเภทจากค่าเริ่มต้นของมัน เช่น :"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -217,18 +217,18 @@
                 android:text="ตัวอย่าง :"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:theme="@style/ThemeOverlay.Font18_exam"/>
+                android:theme="@style/ThemeOverlay.Font18_exam" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:background="#E0E0E0"
                 android:padding="10dp"
                 android:text="var num = 10; //ตัวแปรจะเป็นประเภท int\nvar price = 19.99; //ตัวแปรจะเป็นประเภท double"
                 android:textSize="16sp"
-                android:typeface="monospace"
-                android:layout_marginBottom="10dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:theme="@style/ThemeOverlay.Font16_18"
+                android:typeface="monospace" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -236,17 +236,17 @@
                 android:layout_marginBottom="10dp"
                 android:text="ข้อดีของการใช้ var :"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. ช่วยลดความซับซ้อนในการเขียนโค้ด โดยไม่ต้องระบุประเภทข้อมูล\n2. ทำให้โค้ดมีความยืดหยุ่นมากขึ้น\n3. ง่ายต่อการทำงานกับค่าที่มีประเภทเปลี่ยนแปลงได้"
-                android:textSize="18sp"
-                android:textColor="#000000"
-                android:lineSpacingExtra="3dp"
                 android:layout_marginBottom="10dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:lineSpacingExtra="3dp"
+                android:text="1. ช่วยลดความซับซ้อนในการเขียนโค้ด โดยไม่ต้องระบุประเภทข้อมูล\n2. ทำให้โค้ดมีความยืดหยุ่นมากขึ้น\n3. ง่ายต่อการทำงานกับค่าที่มีประเภทเปลี่ยนแปลงได้"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -254,34 +254,34 @@
                 android:layout_marginBottom="10dp"
                 android:text="ข้อควรระวัง :"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. ต้องให้ค่าของตัวแปรชัดเจน เพื่อไม่ให้เกิดความสับสนในการอ่านโค้ด\n2. ไม่สามารถใช้ var ในการประกาศตัวแปรที่ต้องการกำหนดประเภทข้อมูลอย่างชัดเจน"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:lineSpacingExtra="3dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="1. ต้องให้ค่าของตัวแปรชัดเจน เพื่อไม่ให้เกิดความสับสนในการอ่านโค้ด\n2. ไม่สามารถใช้ var ในการประกาศตัวแปรที่ต้องการกำหนดประเภทข้อมูลอย่างชัดเจน"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="\nข้อควรระวังเกี่ยวกับตัวแปรใน Java"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. ต้องกำหนดค่าตัวแปรก่อนใช้งาน มิฉะนั้นจะเกิดข้อผิดพลาด\n2. ตัวแปรประเภท Primitive ใช้เก็บค่าโดยตรง ส่วน Reference เก็บตำแหน่งอ้างอิงไปยัง Object\n3. ใช้ตัวแปร final เมื่อค่าต้องการให้คงที่ ไม่สามารถเปลี่ยนแปลงได้"
-                android:textSize="18sp"
-                android:textColor="#000000"
                 android:lineSpacingExtra="3dp"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:text="1. ต้องกำหนดค่าตัวแปรก่อนใช้งาน มิฉะนั้นจะเกิดข้อผิดพลาด\n2. ตัวแปรประเภท Primitive ใช้เก็บค่าโดยตรง ส่วน Reference เก็บตำแหน่งอ้างอิงไปยัง Object\n3. ใช้ตัวแปร final เมื่อค่าต้องการให้คงที่ ไม่สามารถเปลี่ยนแปลงได้"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <Button
                 android:id="@+id/btnQuiz2"
@@ -296,8 +296,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btnBackLesson"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDE6F7"
+    android:background="#FFFFFF"
     tools:context=".RegisterActivity">
 
     <View
@@ -23,7 +23,7 @@
         android:layout_height="743dp"
         android:layout_margin="24dp"
         android:layout_marginTop="72dp"
-        android:background="#F8FAFF"
+        android:background="#FFFFFF"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +32,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#FFFFFF"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -52,50 +53,58 @@
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/ic_user"
                 android:hint="Username"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#B6B6B6" />
 
             <EditText
                 android:id="@+id/TextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/ic_email"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="12dp"
-                android:layout_marginTop="15dp"/>
+                android:textColor="#000000"
+                android:textColorHint="#B6B6B6" />
 
             <EditText
                 android:id="@+id/TextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/ic_lock"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="12dp"
-                android:layout_marginTop="15dp"/>
+                android:textColor="#000000"
+                android:textColorHint="#B6B6B6" />
 
             <EditText
                 android:id="@+id/TextPasswordRe"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/ic_lock"
                 android:hint="Repeat Password"
                 android:inputType="textPassword"
                 android:padding="12dp"
-                android:layout_marginTop="15dp"/>
+                android:textColor="#000000"
+                android:textColorHint="#B6B6B6" />
 
             <Button
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="32dp"
                 android:backgroundTint="#6C63FF"
                 android:text="Sign Up"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:layout_marginTop="32dp"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"

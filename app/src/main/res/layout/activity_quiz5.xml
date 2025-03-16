@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Quiz5">
 
     <ScrollView
@@ -363,15 +364,15 @@ System.out.println(&quot;Hello&quot;);\n
 
             <EditText
                 android:id="@+id/q9ans"
-                android:background="#E0E0E0"
-                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#E0E0E0"
                 android:ems="10"
                 android:inputType="textMultiLine"
+                android:padding="10dp"
                 android:text="public int square(int x) {\n
     System.out.println(x * x);\n}"
-                android:theme="@style/ThemeOverlay.Font16_18"/>
+                android:theme="@style/ThemeOverlay.Font16_18" />
 
             <TextView
                 android:layout_width="match_parent"

@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".ProgramActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,12 +66,12 @@
             android:id="@+id/btnQuiz2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background2"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp"
             android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_background2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp"
             android:radius="20dp">
 
             <TextView
@@ -78,8 +79,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="บทที่ 2 ตัวแปร"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/score2"
@@ -96,12 +97,12 @@
             android:id="@+id/btnQuiz3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background2"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp"
             android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_background2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp"
             android:radius="20dp">
 
             <TextView
@@ -109,8 +110,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="บทที่ 3 ชนิดข้อมูล"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/score3"
@@ -127,12 +128,12 @@
             android:id="@+id/btnQuiz4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background2"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp"
             android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_background2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp"
             android:radius="20dp">
 
             <TextView
@@ -140,8 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="บทที่ 4 คำสั่งควบคุม"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/score4"
