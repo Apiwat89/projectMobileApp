@@ -3,6 +3,8 @@ package com.example.project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -16,35 +18,34 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        // ดึง userID จาก Intent ที่ส่งมาจาก LoginActivity
-//        userID = getIntent().getStringExtra("USER_ID");
-        userID = "1";
+        userID = getIntent().getStringExtra("USER_ID");
+        if (userID == null) {
+            Toast.makeText(this, "Session expired, please log in again.", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.action_home) {
-                    if (!(BaseActivity.this instanceof MainActivity)) {
-                        Intent intent = new Intent(BaseActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    return true;
-                } else if (item.getItemId() == R.id.action_quiz) {
-                    if (!(BaseActivity.this instanceof QuizActivity)) {
-                        Intent intent = new Intent(BaseActivity.this, QuizActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    return true;
-                } else if (item.getItemId() == R.id.action_program) {
-                    if (!(BaseActivity.this instanceof ProgramActivity)) {
-                        Intent intent = new Intent(BaseActivity.this, ProgramActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    return true;
+                Class<?> targetActivity = null;
+
+                if (item.getItemId() == R.id.action_home && !(BaseActivity.this instanceof MainActivity)) {
+                    targetActivity = MainActivity.class;
+                } else if (item.getItemId() == R.id.action_quiz && !(BaseActivity.this instanceof QuizActivity)) {
+                    targetActivity = QuizActivity.class;
+                } else if (item.getItemId() == R.id.action_program && !(BaseActivity.this instanceof ProgramActivity)) {
+                    targetActivity = ProgramActivity.class;
+                }
+
+                if (targetActivity != null) {
+                    Intent intent = new Intent(BaseActivity.this, targetActivity);
+                    intent.putExtra("USER_ID", userID);
+                    startActivity(intent);
+                    finish();
                 }
                 return true;
             }
