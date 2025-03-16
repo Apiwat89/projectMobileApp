@@ -75,9 +75,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void ConnectData(String userStr, String passStr, String emailStr) {
         boolean resEmail = database.getUserEmail(emailStr);
+        boolean resUsername = database.getUserUsername(userStr);
 
         if (resEmail) {
             Toast toast = Toast.makeText(this, "This email has already been used.", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 30);
+            toast.show();
+        } else if (resUsername) {
+            Toast toast = Toast.makeText(this, "This username already exists.", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 30);
             toast.show();
         } else {

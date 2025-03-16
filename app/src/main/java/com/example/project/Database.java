@@ -113,6 +113,14 @@ public class Database extends SQLiteOpenHelper {
         return (res != null && res.moveToFirst()) ? res : null;
     }
 
+    public boolean getUserUsername(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + Table_Users + " WHERE " + Users_Username + " = ?",
+                new String[]{username});
+
+        return (res != null && res.moveToFirst()) ? true : false;
+    }
+
     public boolean getUserEmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM " + Table_Users + " WHERE " + Users_Email + " = ?",
