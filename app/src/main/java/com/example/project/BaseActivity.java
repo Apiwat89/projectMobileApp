@@ -45,8 +45,9 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
                 if (targetActivity != null) {
-                    startActivity(new Intent(BaseActivity.this, targetActivity));
-                    finish();
+                    Intent intent = new Intent(BaseActivity.this, targetActivity);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                 }
                 return true;
             }

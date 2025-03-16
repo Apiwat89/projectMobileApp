@@ -44,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, ForgotActivity.class));
-                finish();
             }
         });
 
@@ -52,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-                finish();
             }
         });
     }
@@ -65,8 +63,12 @@ public class LoginActivity extends AppCompatActivity {
             ConnectData(userStr, passStr);
         } else {
             Toast toast = Toast.makeText(this, "You didn't enter everything.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-            toast.show();
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                toast.show();
+            } else {
+                toast.show();
+            }
         }
     }
 
@@ -84,8 +86,12 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         } else {
             Toast toast = Toast.makeText(this, "Username and password are incorrect.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-            toast.show();
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                toast.show();
+            } else {
+                toast.show();
+            }
         }
     }
 

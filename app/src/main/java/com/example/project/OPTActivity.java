@@ -35,8 +35,12 @@ public class OPTActivity extends AppCompatActivity {
         String userEmail = getIntent().getStringExtra("email");
 
         Toast toast = Toast.makeText(this, "Send OTP to " + userEmail, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-        toast.show();
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+            toast.show();
+        } else {
+            toast.show();
+        }
 
         otpCode = generateOTP();
         sendOTP(userEmail, otpCode);
@@ -53,13 +57,21 @@ public class OPTActivity extends AppCompatActivity {
                         finish();
                     } else {
                         Toast toast = Toast.makeText(OPTActivity.this, "Wrong OTP code", Toast.LENGTH_LONG);
-                        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-                        toast.show();
+                        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                            toast.show();
+                        } else {
+                            toast.show();
+                        }
                     }
                 } else {
                     Toast toast = Toast.makeText(OPTActivity.this, "You did not enter the OTP code.", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-                    toast.show();
+                    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                        toast.show();
+                    } else {
+                        toast.show();
+                    }
                 }
             }
         });

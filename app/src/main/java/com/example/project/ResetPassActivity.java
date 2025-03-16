@@ -47,17 +47,26 @@ public class ResetPassActivity extends AppCompatActivity {
             boolean res = database.updateUserPassword(userEmail, newPassStr);
 
             if (res) {
-                startActivity(new Intent(this, LoginActivity.class));
-                finish();
+                Intent intent = new Intent(this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             } else {
                 Toast toast = Toast.makeText(this, "Unable to update password", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-                toast.show();
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                    toast.show();
+                } else {
+                    toast.show();
+                }
             }
         } else {
             Toast toast = Toast.makeText(this, "You did not enter your password.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-            toast.show();
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                toast.show();
+            } else {
+                toast.show();
+            }
         }
     }
 }

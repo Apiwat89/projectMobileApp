@@ -56,13 +56,21 @@ public class ForgotActivity extends AppCompatActivity {
                 });
             } else {
                 Toast toast = Toast.makeText(this, "There is no email in this system.", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-                toast.show();
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                    toast.show();
+                } else {
+                    toast.show();
+                }
             }
         } else {
             Toast toast = Toast.makeText(this, "You didn't enter your email.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
-            toast.show();
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                toast.show();
+            } else {
+                toast.show();
+            }
         }
     }
 }

@@ -46,8 +46,9 @@ public class RegisterActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                finish();
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
     }
@@ -63,13 +64,21 @@ public class RegisterActivity extends AppCompatActivity {
                 ConnectData(userStr, passStr, emailStr);
             } else {
                 Toast toast = Toast.makeText(this, "Passwords don't match", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 30);
-                toast.show();
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                    toast.show();
+                } else {
+                    toast.show();
+                }
             }
         } else {
             Toast toast = Toast.makeText(this, "You didn't enter everything.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 30);
-            toast.show();
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                toast.show();
+            } else {
+                toast.show();
+            }
         }
     }
 
@@ -79,22 +88,35 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (resEmail) {
             Toast toast = Toast.makeText(this, "This email has already been used.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 30);
-            toast.show();
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                toast.show();
+            } else {
+                toast.show();
+            }
         } else if (resUsername) {
             Toast toast = Toast.makeText(this, "This username already exists.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 30);
-            toast.show();
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                toast.show();
+            } else {
+                toast.show();
+            }
         } else {
             boolean resInsertUser = database.insertUser(userStr, passStr, emailStr);
 
             if (resInsertUser) {
-                startActivity(new Intent(this, LoginActivity.class));
-                finish();
+                Intent intent = new Intent(this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             } else {
                 Toast toast = Toast.makeText(this, "Registration failed", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 30);
-                toast.show();
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
+                    toast.show();
+                } else {
+                    toast.show();
+                }
             }
         }
     }
