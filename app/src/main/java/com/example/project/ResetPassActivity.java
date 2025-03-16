@@ -3,7 +3,6 @@ package com.example.project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -16,51 +15,47 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.io.File;
-
-public class ForgotActivity extends AppCompatActivity {
-    private EditText TextEmail;
+public class ResetPassActivity extends AppCompatActivity {
+    private EditText TextNewPassword;
     private Button btnNext;
     private Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot);
+        setContentView(R.layout.activity_reset_pass);
 
-        TextEmail = findViewById(R.id.TextEmail);
+        TextNewPassword = findViewById(R.id.TextNewPassword);
         btnNext = findViewById(R.id.btnNext);
+
+        String userEmail = getIntent().getStringExtra("email");
 
         database = new Database(this);
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ConnectData();
+                ConnectData(userEmail);
             }
         });
     }
 
-    private void ConnectData() {
-        String emailStr = TextEmail.getText().toString();
+    private void ConnectData(String userEmail) {
+        String newPassStr = TextNewPassword.getText().toString();
 
-        if (!TextUtils.isEmpty(emailStr)) {
-            boolean res = database.getUserEmail(emailStr);
+        if (!TextUtils.isEmpty(newPassStr)) {
+            boolean res = database.updateUserPassword(userEmail, newPassStr);
 
             if (res) {
-                runOnUiThread(() -> {
-                    Intent intent = new Intent(this, OPTActivity.class);
-                    intent.putExtra("email", emailStr);
-                    startActivity(intent);
-                    finish();
-                });
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
             } else {
-                Toast toast = Toast.makeText(this, "There is no email in this system.", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(this, "Unable to update password", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
                 toast.show();
             }
         } else {
-            Toast toast = Toast.makeText(this, "You didn't enter your email.", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "You did not enter your password.", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
             toast.show();
         }

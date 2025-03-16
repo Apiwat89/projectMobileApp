@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -39,6 +40,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        btnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ForgotActivity.class));
+                finish();
+            }
+        });
+
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,9 +75,12 @@ public class LoginActivity extends AppCompatActivity {
 
         if (res != null) {
             res.moveToFirst();
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("USER_ID", res.getString(0));
-            startActivity(intent);
+            SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("USER_ID", res.getString(0));
+            editor.apply();
+
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         } else {
             Toast toast = Toast.makeText(this, "Username and password are incorrect.", Toast.LENGTH_LONG);

@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -18,7 +19,9 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        userID = getIntent().getStringExtra("USER_ID");
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        userID = sharedPreferences.getString("USER_ID", null);
+
         if (userID == null) {
             Toast.makeText(this, "Session expired, please log in again.", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, LoginActivity.class);
@@ -42,9 +45,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
                 if (targetActivity != null) {
-                    Intent intent = new Intent(BaseActivity.this, targetActivity);
-                    intent.putExtra("USER_ID", userID);
-                    startActivity(intent);
+                    startActivity(new Intent(BaseActivity.this, targetActivity));
                     finish();
                 }
                 return true;

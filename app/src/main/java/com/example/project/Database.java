@@ -74,15 +74,6 @@ public class Database extends SQLiteOpenHelper {
         String insertLessons = "INSERT INTO " + Table_Lessons + " (" + Lessons_LessonName + ") VALUES " +
                 "('DataType'), ('Variable'), ('Operator'), ('Command'), ('Function');";
         sqLiteDatabase.execSQL(insertLessons);
-
-        String sql = "INSERT INTO " + Table_Users + " (" + Users_Username + ", " + Users_Password + ", " + Users_Email + ") " +
-                "VALUES (?, ?, ?)";
-        SQLiteStatement stmt = sqLiteDatabase.compileStatement(sql);
-        stmt.bindString(1, "apiwat");
-        stmt.bindString(2, "apiwat");
-        stmt.bindString(3, "apiwat89123@gmail.com");
-        stmt.executeInsert();
-        stmt.close();
     }
 
     @Override
