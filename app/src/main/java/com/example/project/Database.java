@@ -127,7 +127,7 @@ public class Database extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("SELECT * FROM " + Table_Users + " WHERE " + Users_Email + " = ?",
                 new String[]{email});
 
-        return (res != null && res.getCount() > 0) ? true : false;
+        return (res != null && res.moveToFirst()) ? true : false;
     }
 
     public boolean updateUserPassword(String email, String newPassword) {
@@ -196,10 +196,10 @@ public class Database extends SQLiteOpenHelper {
         return result > 0;
     }
 
-    public Cursor getAllScore() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+ Table_Scores, null);
-
-        return res;
-    }
+//    public Cursor getAllScore() {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor res = db.rawQuery("SELECT * FROM "+ Table_Scores, null);
+//
+//        return res;
+//    }
 }

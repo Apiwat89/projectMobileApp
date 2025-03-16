@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btnLesson1) {
-            startActivity(new Intent(this, test.class));
+            startActivity(new Intent(this, Lesson1.class));
             finishAffinity();
         } else if (id == R.id.btnLesson2) {
             startActivity(new Intent(this, Lesson2.class));
