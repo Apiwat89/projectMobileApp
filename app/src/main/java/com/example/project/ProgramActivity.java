@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -27,6 +28,7 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setLayout(R.layout.activity_program);
         setSelectedNavItem(R.id.action_program);
@@ -72,7 +74,7 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
         for (int n = 0; n < lesson.length; n++) {
             if (lesson[n] == 1) {
                 btnQuiz1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-                score1.setText(scorelesson[n] < 10 ? String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
+                score1.setText(scorelesson[n] < 10 ? "   " + String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
                 score1.setBackgroundColor(Color.WHITE);
             }
             else if (lesson[n] == 2) {

@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 public class Lesson1 extends BaseActivity implements View.OnClickListener {
     private ImageButton btnBack;
     private Button btnQuiz1, btnNextLesson;
@@ -13,6 +15,7 @@ public class Lesson1 extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setLayout(R.layout.activity_lesson1);
 
