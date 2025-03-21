@@ -1,18 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Project" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.Project" parent="Theme.Material3.Light.NoActionBar">
+        <!-- บังคับให้เป็นโหมดสว่างเสมอ -->
+        <item name="android:forceDarkAllowed">false</item>
         <item name="android:fontFamily">@font/kanit</item>
     </style>
 
     <style name="Theme.Project" parent="Base.Theme.Project" />
 
-    <style name="ThemeOverlay.Font16_18" parent="">
+    <style name="ThemeOverlay.Font16_18">
         <item name="android:fontFamily">@font/kanitlittle</item>
     </style>
 
-    <style name="ThemeOverlay.Font18_exam" parent="">
+    <style name="ThemeOverlay.Font18_exam">
         <item name="android:fontFamily">@font/kanitlittleexam</item>
     </style>
 </resources>
