@@ -72,27 +72,27 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
         for (int n = 0; n < lesson.length; n++) {
             if (lesson[n] == 1) {
                 btnQuiz1.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-                score1.setText(scorelesson[n] < 10 ? "0" + String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
+                score1.setText(scorelesson[n] < 10 ? String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
                 score1.setBackgroundColor(Color.WHITE);
             }
             else if (lesson[n] == 2) {
                 btnQuiz2.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-                score2.setText(scorelesson[n] < 10 ? "0" + String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
+                score2.setText(scorelesson[n] < 10 ? String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
                 score2.setBackgroundColor(Color.WHITE);
             }
             else if (lesson[n] == 3) {
                 btnQuiz3.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-                score3.setText(scorelesson[n] < 10 ? "0" + String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
+                score3.setText(scorelesson[n] < 10 ? String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
                 score3.setBackgroundColor(Color.WHITE);
             }
             else if (lesson[n] == 4) {
                 btnQuiz4.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-                score4.setText(scorelesson[n] < 10 ? "0" + String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
+                score4.setText(scorelesson[n] < 10 ? String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
                 score4.setBackgroundColor(Color.WHITE);
             }
             else if (lesson[n] == 5) {
                 btnQuiz5.setBackgroundTintList(getResources().getColorStateList(R.color.purple));
-                score5.setText(scorelesson[n] < 10 ? "0" + String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
+                score5.setText(scorelesson[n] < 10 ? String.valueOf(scorelesson[n]) + "/10" : String.valueOf(scorelesson[n]) + "/10");
                 score5.setBackgroundColor(Color.WHITE);
             }
         }

@@ -52,16 +52,35 @@ public class Quiz5 extends BaseActivity {
     private void ConnectData(String userID) {
         boolean res = database.getScoreUser(lessonID, userID);
         if (res) {
-            boolean resUpdate = database.updateScore(userID, lessonID, score, status);
-            if (resUpdate) {
-                dialogScore();
-            } else Toast.makeText(this, "update not success", Toast.LENGTH_SHORT).show();
+            boolean resCheckScore = database.checkScore(userID, score);
+            if (resCheckScore) {
+                boolean resUpdate = database.updateScore(userID, lessonID, score, status);
+                if (resUpdate) {
+                    dialogScore();
+                } else Toast.makeText(this, "update not success", Toast.LENGTH_SHORT).show();
+            } else dialogScoreLow();
         } else {
             boolean resInsert = database.insertScore(userID, lessonID, score, status);
             if (resInsert) {
                 dialogScore();
             } else Toast.makeText(this, "insert not success", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void dialogScoreLow() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setIcon(R.drawable.logo);
+        builder.setTitle("ทำแบบทดสอบแล้ว");
+        builder.setMessage("คะแนนที่ได้ต่ำกว่ารอบที่แล้ว ไม่บันทึกคะแนน");
+        builder.setPositiveButton("Ignore", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                startActivity(new Intent(Quiz5.this, QuizActivity.class));
+                finish();
+            }
+        });
+        builder.create().show();
     }
 
     private void dialogScore() {

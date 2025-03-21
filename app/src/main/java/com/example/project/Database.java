@@ -183,6 +183,21 @@ public class Database extends SQLiteOpenHelper {
         return result == -1 ? false : true;
     }
 
+    public boolean checkScore(String userID, int score) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT " + Scores_Score + " FROM " + Table_Scores +
+                " WHERE " + Scores_UserID + " = ?", new String[]{userID});
+
+        boolean more = false;
+        if (res != null) {
+            if (res.moveToFirst()) {
+                more = (res.getInt(0) <= score);
+            }
+            res.close();
+        }
+        return more;
+    }
+
     public boolean updateScore(String userID, String lessonID, int score, String status) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
