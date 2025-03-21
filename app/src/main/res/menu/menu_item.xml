@@ -14,4 +14,8 @@
         android:id="@+id/action_program"
         android:icon="@drawable/program"
         android:title="PROGRAM" />
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/about"
+        android:title="About" />
 </menu>

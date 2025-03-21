@@ -9,8 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
@@ -27,6 +31,12 @@ public class OPTActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_optactivity);
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         TextOTP = findViewById(R.id.TextOPT);
         btnNext = findViewById(R.id.btnNext);
@@ -52,6 +62,7 @@ public class OPTActivity extends AppCompatActivity {
                     Intent intent = new Intent(OPTActivity.this, ResetPassActivity.class);
                     intent.putExtra("email", userEmail);
                     startActivity(intent);
+                    overridePendingTransition(0, 0);
                     finish();
                 } else {
                     showToast("Wrong OTP code");

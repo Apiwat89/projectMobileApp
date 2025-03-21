@@ -31,7 +31,12 @@ public class Quiz2 extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
-        setLayout(R.layout.activity_quiz2);
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         for (int n = 0; n < radios.length; n++) {
             radios[n] = findViewById(verifyRadio[n]);
@@ -79,6 +84,7 @@ public class Quiz2 extends BaseActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 startActivity(new Intent(Quiz2.this, QuizActivity.class));
+                overridePendingTransition(0, 0);
                 finish();
             }
         });
@@ -95,6 +101,7 @@ public class Quiz2 extends BaseActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 startActivity(new Intent(Quiz2.this, QuizActivity.class));
+                overridePendingTransition(0, 0);
                 finish();
             }
         });
@@ -111,5 +118,15 @@ public class Quiz2 extends BaseActivity {
         if (q10ans.getText().toString().equals("var name = \"John\"")) score++;
 
         status = score == 10 ? "All correct" : "Not entirely correct";
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_quiz2;
+    }
+
+    @Override
+    protected int getSelectedNavItem() {
+        return 0;
     }
 }

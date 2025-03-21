@@ -22,7 +22,12 @@ public class Lesson4 extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
-        setLayout(R.layout.activity_lesson4);
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         btnBack = findViewById(R.id.btnBack);
         btnQuiz4 = findViewById(R.id.btnQuiz4);
@@ -41,15 +46,19 @@ public class Lesson4 extends BaseActivity implements View.OnClickListener {
         int id = view.getId();
         if (id == R.id.btnBack) {
             startActivity(new Intent(this, MainActivity.class));
+            overridePendingTransition(0, 0);
             finish();
         } else if (id == R.id.btnBackLesson) {
             startActivity(new Intent(this, Lesson3.class));
+            overridePendingTransition(0, 0);
             finish();
         } else if (id == R.id.btnNextLesson) {
             startActivity(new Intent(this, Lesson5.class));
+            overridePendingTransition(0, 0);
             finish();
         } else if (id == R.id.btnQuiz4) {
             startActivity(new Intent(this, Quiz4.class));
+            overridePendingTransition(0, 0);
         }
     }
 
@@ -57,6 +66,17 @@ public class Lesson4 extends BaseActivity implements View.OnClickListener {
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(this, MainActivity.class));
+        overridePendingTransition(0, 0);
         finish();
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_lesson4;
+    }
+
+    @Override
+    protected int getSelectedNavItem() {
+        return 0;
     }
 }

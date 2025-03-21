@@ -38,20 +38,20 @@ public class DashedCurveView extends View {
         path.reset();
 
         // เชื่อมปุ่ม 1 → 2
-        path.moveTo(600, 200);
-        path.quadTo(400, 200, 280, 400);
+        path.moveTo(1000, 300);
+        path.quadTo(500, 350, 400, 800);
 
         // เชื่อมปุ่ม 2 → 3
-        path.moveTo(280, 400);
-        path.quadTo(300, 600, 600, 600);
+        path.moveTo(400, 800);
+        path.quadTo(650, 650, 980, 1000);
 
         // เชื่อมปุ่ม 3 → 4
-        path.moveTo(400, 800);
-        path.quadTo(500, 900, 700, 700);
+        path.moveTo(980, 1000);
+        path.quadTo(560, 1000, 400, 1500);
 
         // เชื่อมปุ่ม 4 → 5
-        path.moveTo(280, 800);
-        path.quadTo(320, 1100, 700, 1100);
+        path.moveTo(400, 1500);
+        path.quadTo(700, 1350, 980, 1800);
 
         canvas.drawPath(path, paint);
     }

@@ -6,8 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,8 +28,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
-        setLayout(R.layout.activity_main);
-        setSelectedNavItem(R.id.action_home);
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         progressView = findViewById(R.id.progressView);
         tvProgress = findViewById(R.id.tvProgress);
@@ -90,19 +98,34 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         int id = view.getId();
         if (id == R.id.btnLesson1) {
             startActivity(new Intent(this, Lesson1.class));
+            overridePendingTransition(0, 0);
             finishAffinity();
         } else if (id == R.id.btnLesson2) {
             startActivity(new Intent(this, Lesson2.class));
+            overridePendingTransition(0, 0);
             finishAffinity();
         } else if (id == R.id.btnLesson3) {
             startActivity(new Intent(this, Lesson3.class));
+            overridePendingTransition(0, 0);
             finishAffinity();
         } else if (id == R.id.btnLesson4) {
             startActivity(new Intent(this, Lesson4.class));
+            overridePendingTransition(0, 0);
             finishAffinity();
         } else if (id == R.id.btnLesson5) {
             startActivity(new Intent(this, Lesson5.class));
+            overridePendingTransition(0, 0);
             finishAffinity();
         }
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected int getSelectedNavItem() {
+        return R.id.action_home;
     }
 }

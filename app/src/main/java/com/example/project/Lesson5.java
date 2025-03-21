@@ -22,7 +22,12 @@ public class Lesson5 extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
-        setLayout(R.layout.activity_lesson5);
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         btnBack = findViewById(R.id.btnBack);
         btnQuiz5 = findViewById(R.id.btnQuiz5);
@@ -39,12 +44,15 @@ public class Lesson5 extends BaseActivity implements View.OnClickListener {
         int id = view.getId();
         if (id == R.id.btnBack) {
             startActivity(new Intent(this, MainActivity.class));
+            overridePendingTransition(0, 0);
             finish();
         } else if (id == R.id.btnBackLesson) {
             startActivity(new Intent(this, Lesson4.class));
+            overridePendingTransition(0, 0);
             finish();
         } else if (id == R.id.btnQuiz5) {
             startActivity(new Intent(this, Quiz5.class));
+            overridePendingTransition(0, 0);
         }
     }
 
@@ -52,6 +60,17 @@ public class Lesson5 extends BaseActivity implements View.OnClickListener {
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(this, MainActivity.class));
+        overridePendingTransition(0, 0);
         finish();
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_lesson5;
+    }
+
+    @Override
+    protected int getSelectedNavItem() {
+        return 0;
     }
 }

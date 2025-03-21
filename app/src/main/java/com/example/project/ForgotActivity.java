@@ -29,6 +29,12 @@ public class ForgotActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot);
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         TextEmail = findViewById(R.id.TextEmail);
         btnNext = findViewById(R.id.btnNext);
@@ -54,6 +60,7 @@ public class ForgotActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, OPTActivity.class);
                     intent.putExtra("email", emailStr);
                     startActivity(intent);
+                    overridePendingTransition(0, 0);
                     finish();
                 });
             } else {

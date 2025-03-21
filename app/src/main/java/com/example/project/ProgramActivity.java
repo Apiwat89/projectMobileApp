@@ -30,8 +30,12 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
-        setLayout(R.layout.activity_program);
-        setSelectedNavItem(R.id.action_program);
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         btnQuiz1 = findViewById(R.id.btnQuiz1);
         btnQuiz2 = findViewById(R.id.btnQuiz2);
@@ -122,6 +126,7 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
                 try {
                     Class<?> quizClass = Class.forName("com.example.project.Quiz" + log);
                     startActivity(new Intent(ProgramActivity.this, quizClass));
+                    overridePendingTransition(0, 0);
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -134,5 +139,15 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
             }
         });
         builder.create().show();
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_program;
+    }
+
+    @Override
+    protected int getSelectedNavItem() {
+        return R.id.action_program;
     }
 }
