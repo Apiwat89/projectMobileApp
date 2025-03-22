@@ -83,7 +83,9 @@ public class Quiz5 extends BaseActivity {
         builder.setPositiveButton("Ignore", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(Quiz5.this, QuizActivity.class));
+                Intent intent = new Intent(Quiz5.this, QuizActivity.class);
+                intent.putExtra("Video", "start");
+                startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
             }
@@ -100,7 +102,9 @@ public class Quiz5 extends BaseActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(Quiz5.this, QuizActivity.class));
+                Intent intent = new Intent(Quiz5.this, QuizActivity.class);
+                intent.putExtra("Video", "start");
+                startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
             }

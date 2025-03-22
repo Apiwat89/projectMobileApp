@@ -2,13 +2,20 @@ package com.example.project;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -18,6 +25,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class Quiz1 extends BaseActivity {
     private String lessonID = "1";
     private int [] verifyRadio = {R.id.q1b, R.id.q2a, R.id.q3b, R.id.q4a, R.id.q5a,R.id.q6b, R.id.q7c, R.id.q8a};
@@ -26,6 +36,7 @@ public class Quiz1 extends BaseActivity {
     private int score = 0;
     private String status = "";
     private Button btnSend;
+
     private Database database;
 
     @Override
@@ -84,7 +95,9 @@ public class Quiz1 extends BaseActivity {
         builder.setPositiveButton("Ignore", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(Quiz1.this, QuizActivity.class));
+                Intent intent = new Intent(Quiz1.this, QuizActivity.class);
+                intent.putExtra("Video", "start");
+                startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
             }
@@ -101,7 +114,9 @@ public class Quiz1 extends BaseActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(Quiz1.this, QuizActivity.class));
+                Intent intent = new Intent(Quiz1.this, QuizActivity.class);
+                intent.putExtra("Video", "start");
+                startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
             }

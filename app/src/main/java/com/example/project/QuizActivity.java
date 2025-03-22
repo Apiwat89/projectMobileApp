@@ -2,9 +2,14 @@ package com.example.project;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -20,6 +25,7 @@ import java.util.HashMap;
 public class QuizActivity extends BaseActivity implements View.OnClickListener {
     private Button btnQuiz1, btnQuiz2, btnQuiz3, btnQuiz4, btnQuiz5;
     private int [] lessonSuccess;
+    private LinearLayout videoContainer;
     private Database database;
 
     @Override
@@ -48,6 +54,42 @@ public class QuizActivity extends BaseActivity implements View.OnClickListener {
 
         ConnectData(userID);
         updateButton(lessonSuccess);
+
+        String video = getIntent().hasExtra("Video") ? getIntent().getStringExtra("Video") : null;
+        videoContainer = findViewById(R.id.videoContainer);
+        createVideoView(video);
+    }
+
+    private void createVideoView(String start) {
+        if (start != null) {
+            if (videoContainer == null) return;
+
+            videoContainer.removeAllViews();
+
+            VideoView videoView = new VideoView(this);
+            LinearLayout.LayoutParams videoParams = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, 800
+            );
+            videoParams.setMargins(0, 2300, 0, 0);
+            videoView.setLayoutParams(videoParams);
+
+            try {
+                Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.celebration);
+                videoView.setVideoURI(videoUri);
+
+                videoContainer.addView(videoView);
+                videoContainer.setVisibility(View.VISIBLE);
+
+                videoView.setOnPreparedListener(mp -> {
+                    mp.setLooping(true);
+                    videoView.start();
+                });
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, "ไม่สามารถโหลดวิดีโอได้", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void ConnectData(String UserID) {

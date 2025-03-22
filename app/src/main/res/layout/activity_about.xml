@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:text="ทีมพัฒนา"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +24,7 @@
         android:id="@+id/contectProjectManager"
         android:layout_width="409dp"
         android:layout_height="150dp"
+        android:layout_marginTop="10dp"
         android:background="#3F51B5"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +39,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1.5"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
+            android:background="@drawable/rounded_image"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/profile1"
             tools:srcCompat="@tools:sample/avatars" />
 
@@ -54,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:text="Project Manager"
                 android:textAlignment="center"
@@ -67,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="นายอภิวัฒน์ เกษสาวงค์\n6506021620211\nติดต่อ project manager"
+                android:text="นายอภิวัฒน์ เกษสาวงค์\n6506021620211"
                 android:textAlignment="center"
                 android:textColor="#CBD2FB"
                 android:textSize="18dp"
@@ -81,7 +85,7 @@
         android:id="@+id/contectResearch"
         android:layout_width="409dp"
         android:layout_height="150dp"
-        android:layout_marginTop="465dp"
+        android:layout_marginTop="475dp"
         android:background="#FF9800"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,9 +100,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1.5"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/profile1"
+            android:background="@drawable/rounded_image"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/profile4"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -113,6 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:text="Research"
                 android:textAlignment="center"
@@ -126,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="นายอภิวัฒน์ เกษสาวงค์\n6506021620211\nติดต่อ Research"
+                android:text="นายสุชาพุฒิ ประณีตทอง\n6506021620202"
                 android:textAlignment="center"
                 android:textColor="#FFEFD7"
                 android:textSize="18dp"
@@ -140,7 +146,7 @@
         android:id="@+id/contectUIUX"
         android:layout_width="409dp"
         android:layout_height="150dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="320dp"
         android:background="#C95ADC"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,9 +161,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1.5"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/profile1"
+            android:background="@drawable/rounded_image"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/profile3"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -172,6 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:text="UI/UX"
                 android:textAlignment="center"
@@ -185,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="นายอภิวัฒน์ เกษสาวงค์\n6506021620211\nติดต่อ UI/UX"
+                android:text="นางสาววชิรญาณ์ ศรีนวล\n6506021620172"
                 android:textAlignment="center"
                 android:textColor="#FADCFF"
                 android:textSize="18dp"
@@ -199,7 +207,7 @@
         android:id="@+id/contectDeveloper"
         android:layout_width="409dp"
         android:layout_height="150dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="165dp"
         android:background="#4CAF50"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -214,9 +222,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1.5"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/profile1"
+            android:background="@drawable/rounded_image"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/profile2"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -231,6 +240,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:text="Developer"
                 android:textAlignment="center"
@@ -244,7 +254,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="นายอภิวัฒน์ เกษสาวงค์\n6506021620211\nติดต่อ Developer"
+                android:text="นายกิตติภพ เพชรบุรี\n6506021620016"
                 android:textAlignment="center"
                 android:textColor="#C0FFC2"
                 android:textSize="18dp"
@@ -252,28 +262,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="#03A9F4"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contectResearch">
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Application JavaQuest"
-            android:textAlignment="center"
-            android:textColor="#CFF0FF"
-            android:textSize="16sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

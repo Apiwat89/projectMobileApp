@@ -43,7 +43,7 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View view) {
         if (view.getId() == R.id.contectProjectManager) {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("s6506021620211@email.kmutnb.ac.th"));
+            intent.setData(Uri.parse("mailto:s6506021620211@email.kmutnb.ac.th"));
             intent.putExtra(Intent.EXTRA_SUBJECT, "Email for JavaQuest");
 
             try {
@@ -53,7 +53,7 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
             }
         } else if (view.getId() == R.id.contectDeveloper) {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("s6506021620211@email.kmutnb.ac.th"));
+            intent.setData(Uri.parse("mailto:s6506021620016@email.kmutnb.ac.th"));
             intent.putExtra(Intent.EXTRA_SUBJECT, "Email for JavaQuest");
 
             try {
@@ -63,7 +63,7 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
             }
         } else if (view.getId() == R.id.contectUIUX) {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("s6506021620211@email.kmutnb.ac.th"));
+            intent.setData(Uri.parse("mailto:s6506021620172@email.kmutnb.ac.th"));
             intent.putExtra(Intent.EXTRA_SUBJECT, "Email for JavaQuest");
 
             try {
@@ -73,7 +73,7 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
             }
         } else if (view.getId() == R.id.contectResearch) {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("s6506021620211@email.kmutnb.ac.th"));
+            intent.setData(Uri.parse("mailto:s6506021620202@email.kmutnb.ac.th"));
             intent.putExtra(Intent.EXTRA_SUBJECT, "Email for JavaQuest");
 
             try {
