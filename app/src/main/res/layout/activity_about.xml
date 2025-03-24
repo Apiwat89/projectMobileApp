@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,248 +20,362 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/contectProjectManager"
-        android:layout_width="409dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="10dp"
-        android:background="#3F51B5"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about_title">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1.5"
-            android:background="@drawable/rounded_image"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/profile1"
-            tools:srcCompat="@tools:sample/avatars" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_title"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginTop="-10dp"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <TextView
-                android:id="@+id/textView3"
+
+            <!-- project manager -->
+            <LinearLayout
+                android:id="@+id/contectProjectManager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:text="Project Manager"
-                android:textAlignment="center"
-                android:textColor="#CBD2FB"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="16dp"
+                android:background="#3F51B5"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="นายอภิวัฒน์ เกษสาวงค์\n6506021620211"
-                android:textAlignment="center"
-                android:textColor="#CBD2FB"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imageView_pm"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1.6"
+                        android:background="@drawable/rounded_image"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile1" />
 
-    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/contectResearch"
-        android:layout_width="409dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="475dp"
-        android:background="#FF9800"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about_title">
+                        <TextView
+                            android:id="@+id/textView_pm_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Project Manager"
+                            android:textAlignment="center"
+                            android:textColor="#CBD2FB"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1.5"
-            android:background="@drawable/rounded_image"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/profile4"
-            tools:srcCompat="@tools:sample/avatars" />
+                        <TextView
+                            android:id="@+id/textView_pm_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="คลิกดูเพิ่มเติม"
+                            android:textAlignment="center"
+                            android:textColor="#CBD2FB"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/detailProjectManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#D1D9FF"
+                    android:padding="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-            <TextView
-                android:id="@+id/textView3"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รายละเอียดเกี่ยวกับ Project manager"
+                        android:textSize="16sp"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รหัส: 65-060216-2021-1\nชื่อ: นายอภิวัฒน์ เกษสาวงค์\nอีเมล: s6506021620211@email.kmutnb.ac.th\nFB: Apiwat Ketsawong\nIG: apiwat.ea\nโทร: 666-666-6666"
+                        android:textSize="14sp"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Developer -->
+            <LinearLayout
+                android:id="@+id/contectDeveloper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:text="Research"
-                android:textAlignment="center"
-                android:textColor="#FFEFD7"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="16dp"
+                android:background="#4CAF50"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="นายสุชาพุฒิ ประณีตทอง\n6506021620202"
-                android:textAlignment="center"
-                android:textColor="#FFEFD7"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imageView_dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1.6"
+                        android:background="@drawable/rounded_image"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile2" />
 
-    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/contectUIUX"
-        android:layout_width="409dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="320dp"
-        android:background="#C95ADC"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about_title">
+                        <TextView
+                            android:id="@+id/textView_dp_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Developer"
+                            android:textAlignment="center"
+                            android:textColor="#D1EFD1"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1.5"
-            android:background="@drawable/rounded_image"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/profile3"
-            tools:srcCompat="@tools:sample/avatars" />
+                        <TextView
+                            android:id="@+id/textView_dp_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="คลิกดูเพิ่มเติม"
+                            android:textAlignment="center"
+                            android:textColor="#D1EFD1"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/detailDeveloper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#D1EFD1"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone">
 
-            <TextView
-                android:id="@+id/textView3"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รายละเอียดเกี่ยวกับ Developer"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รหัส: 65-060216-2001-6\nชื่อ: นายกิตติภพ เพชรบุรี\nอีเมล: s6506021620016@email.kmutnb.ac.th\nFB: Kittipop Phetburi\nIG: txnpaii\nโทร: 666-666-6666"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- UIUX -->
+            <LinearLayout
+                android:id="@+id/contectUIUX"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:text="UI/UX"
-                android:textAlignment="center"
-                android:textColor="#FADCFF"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="16dp"
+                android:background="#9C27B0"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="นางสาววชิรญาณ์ ศรีนวล\n6506021620172"
-                android:textAlignment="center"
-                android:textColor="#FADCFF"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imageView_UIUX"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1.6"
+                        android:background="@drawable/rounded_image"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile3" />
 
-    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/contectDeveloper"
-        android:layout_width="409dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="165dp"
-        android:background="#4CAF50"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about_title">
+                        <TextView
+                            android:id="@+id/textView_UIUX_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="UX/UI"
+                            android:textAlignment="center"
+                            android:textColor="#E1CCE6"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1.5"
-            android:background="@drawable/rounded_image"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/profile2"
-            tools:srcCompat="@tools:sample/avatars" />
+                        <TextView
+                            android:id="@+id/textView_UIUX_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="คลิกดูเพิ่มเติม"
+                            android:textAlignment="center"
+                            android:textColor="#E1CCE6"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/detailUIUX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E1CCE6"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone">
 
-            <TextView
-                android:id="@+id/textView3"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รายละเอียดเกี่ยวกับ UX/UI"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รหัส: 65-060216-2017-2\nชื่อ: นางสาววชิรญาณ์ ศรีนวล\nอีเมล: s6506021620172@email.kmutnb.ac.th\nFB: Wachi Wachi\nIG: wachikhaw\nโทร: 666-666-6666"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Research -->
+            <LinearLayout
+                android:id="@+id/contectResearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:text="Developer"
-                android:textAlignment="center"
-                android:textColor="#C0FFC2"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="16dp"
+                android:background="#FFC107"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="นายกิตติภพ เพชรบุรี\n6506021620016"
-                android:textAlignment="center"
-                android:textColor="#C0FFC2"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView_Research"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1.6"
+                        android:background="@drawable/rounded_image"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/profile4" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView_RS_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Research"
+                            android:textAlignment="center"
+                            android:textColor="#FAFAE5"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView_RS_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="คลิกดูเพิ่มเติม"
+                            android:textAlignment="center"
+                            android:textColor="#FAFAE5"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detailResearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FAFAE5"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รายละเอียดเกี่ยวกับ Research"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="รหัส: 65-060216-2020-2\nชื่อ: นายสุชาพุฒิ ประณีตทอง\nอีเมล: s6506021620202@email.kmutnb.ac.th\nFB: Suchaphut Praneetthong\nIG: fxrk03\nโทร: 666-666-6666"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,7 +84,6 @@ public class Quiz2 extends BaseActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent intent = new Intent(Quiz2.this, QuizActivity.class);
-                intent.putExtra("Video", "start");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -103,7 +102,6 @@ public class Quiz2 extends BaseActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent intent = new Intent(Quiz2.this, QuizActivity.class);
-                intent.putExtra("Video", "start");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

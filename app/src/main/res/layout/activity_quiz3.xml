@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="343dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_gravity="center"
                 android:text="แบบทดสอบวิชา Java\nบทที่ 3 ตัวดำเนินการ"
                 android:textAlignment="center"
                 android:textColor="#000000"
@@ -379,7 +379,7 @@
                 android:id="@+id/q10ans"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="30dp"
                 android:background="#E0E0E0"
                 android:ems="10"
                 android:inputType="textMultiLine"
@@ -387,20 +387,18 @@
                 android:text="boolean check = (5 > 3) &amp;&amp; (2 == &quot;2&quot;);"
                 android:theme="@style/ThemeOverlay.Font16_18" />
 
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ส่ง"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_marginBottom="15dp"
-        android:text="ส่ง"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
