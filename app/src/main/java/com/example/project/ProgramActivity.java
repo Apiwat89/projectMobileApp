@@ -143,19 +143,6 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
     }
 
     @Override
-    public void onBackPressed() {
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.remove("USER_ID");
-        editor.apply();
-
-        super.onBackPressed();
-
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
-    }
-
-    @Override
     protected int getLayoutResource() {
         return R.layout.activity_program;
     }
