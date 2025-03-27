@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -117,6 +118,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             overridePendingTransition(0, 0);
             finishAffinity();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("USER_ID");
+        editor.apply();
+
+        super.onBackPressed();
+
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     @Override

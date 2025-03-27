@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -139,6 +140,19 @@ public class ProgramActivity extends BaseActivity implements View.OnClickListene
             }
         });
         builder.create().show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("USER_ID");
+        editor.apply();
+
+        super.onBackPressed();
+
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     @Override

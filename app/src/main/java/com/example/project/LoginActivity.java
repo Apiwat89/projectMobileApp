@@ -56,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, ForgotActivity.class));
-                overridePendingTransition(0, 0);
             }
         });
 
@@ -64,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-                overridePendingTransition(0, 0);
             }
         });
     }
@@ -97,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
             editor.apply();
 
             startActivity(new Intent(this, MainActivity.class));
-            overridePendingTransition(0, 0);
+            overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
             finish();
         } else {
             Toast toast = Toast.makeText(this, "Username and password are incorrect.", Toast.LENGTH_LONG);

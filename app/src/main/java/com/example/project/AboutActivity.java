@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
@@ -171,6 +172,19 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
         ObjectAnimator fadeIn = ObjectAnimator.ofFloat(nameView, "alpha", 0f, 1f);
         fadeIn.setDuration(1200);
         fadeIn.start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("USER_ID");
+        editor.apply();
+
+        super.onBackPressed();
+
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     @Override
